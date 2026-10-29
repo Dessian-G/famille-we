@@ -89,9 +89,14 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
 
 ### Logo
 
-- Fichier : `[À FOURNIR]` (SVG idéal, sinon PNG d'au moins 512 px). Une fois fourni, le copier dans `wp-content/themes/asso-theme/assets/images/`.
-- En attendant : logotype texte « La Famille WE » en Bricolage Grotesque 800, vert `#00754A`, avec « WE » en orange profond `#B35400`.
-- Icône du site (favicon) : 512 × 512, générée à partir du logo.
+- Badge rond fourni par Max le 29/10/2026 (capture de téléphone `famillewe.jpg`), découpé avec fond transparent :
+  - `assets/images/logo-famille-we.png` (512 × 512, source de l'icône du site) ;
+  - `assets/images/logo-famille-we-256.webp` (affiché dans l'en-tête et le pied de page).
+- En-tête : badge 52 px + logotype texte « La Famille WE » (Bricolage Grotesque 800, vert, « WE » en orange profond), un seul lien vers l'accueil ; badge seul sous 480 px, nom gardé pour les lecteurs d'écran.
+- Pied de page : badge 96 px cerclé de blanc, au-dessus du nom.
+- Icône du site : pièce jointe n° 32 de la médiathèque, réglée dans `site_icon`.
+- Une version vectorielle (SVG) ou un PNG haute définition sur fond transparent reste souhaitable `[À FOURNIR]` : la source actuelle est une capture compressée.
+- Orthographe : le badge écrit « Famille **Wê** » (accent circonflexe), le site écrit « WE » `[À VALIDER : orthographe officielle]`.
 
 ---
 

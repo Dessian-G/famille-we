@@ -52,11 +52,56 @@
 }
 
 .asso-logotype a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.65rem;
 	text-decoration: none;
 }
 
 .asso-logotype a:hover {
 	text-decoration: underline;
+}
+
+/* Badge du logo : taille fixée ici, même si l'éditeur retire ses attributs. */
+.asso-logotype .asso-logo {
+	display: block;
+	flex-shrink: 0;
+	width: 52px;
+	height: 52px;
+}
+
+.asso-pied .asso-logotype a {
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+/* Anneau blanc : la bande verte du badge se fondrait dans le pied de page vert. */
+.asso-pied .asso-logotype .asso-logo {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px var(--wp--preset--color--blanc);
+}
+
+/* Petit téléphone : badge seul dans l'en-tête, nom gardé pour les lecteurs d'écran. */
+@media (max-width: 480px) {
+	.asso-entete .asso-logotype .asso-logo {
+		width: 44px;
+		height: 44px;
+	}
+
+	.asso-entete .asso-logotype__texte {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+		border: 0;
+	}
 }
 
 .asso-entete-don {

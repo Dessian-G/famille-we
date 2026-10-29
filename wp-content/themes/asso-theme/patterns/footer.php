@@ -48,7 +48,7 @@ $asso_menu = wp_json_encode(
 <div class="wp-block-group alignfull asso-pied has-blanc-color has-vert-background-color has-text-color has-background has-link-color" style="margin-top:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"className":"asso-logotype","style":{"typography":{"fontWeight":"800","lineHeight":"1.1","letterSpacing":"-0.02em"}},"fontFamily":"bricolage","fontSize":"x-large"} -->
-<p class="asso-logotype has-bricolage-font-family has-x-large-font-size" style="font-weight:800;letter-spacing:-0.02em;line-height:1.1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">La Famille WE</a></p>
+<p class="asso-logotype has-bricolage-font-family has-x-large-font-size" style="font-weight:800;letter-spacing:-0.02em;line-height:1.1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="asso-logo" src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logo-famille-we-256.webp' ) ); ?>" alt="" width="96" height="96" loading="lazy"><span class="asso-logotype__texte">La Famille WE</span></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
