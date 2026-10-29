@@ -81,10 +81,6 @@ $asso_menu = wp_json_encode(
 
 <!-- wp:paragraph -->
 <p><a href="<?php echo esc_url( 'mailto:' . antispambot( $asso_courriel ) ); ?>"><?php echo esc_html( antispambot( $asso_courriel ) ); ?></a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Facebook&nbsp;: [À FOURNIR&nbsp;: URL de la page Facebook]', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

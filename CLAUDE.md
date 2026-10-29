@@ -36,7 +36,7 @@ Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max e
 | Élément | Valeur |
 |---|---|
 | E-mail de contact | famillewededallas@gmail.com |
-| Facebook | Page « Famille WE Dallas-Oklahoma » — URL `[À FOURNIR]` |
+| Facebook | Pas encore de page (à créer) : ne rien afficher ni annoncer d'ici là |
 | Instagram, WhatsApp, TikTok, YouTube | Aucun pour l'instant : ne pas afficher d'icône |
 
 - Afficher l'e-mail avec `antispambot()`, jamais en clair dans le HTML.
@@ -111,7 +111,7 @@ Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésio
 
 ### Pied de page
 
-Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail, Facebook).
+Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail ; Facebook quand la page existera).
 Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité.
 
 ### Pages
@@ -128,7 +128,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 | Actualités | `/actualites/` | Page des articles. Catégories proposées `[À VALIDER]` : Vie de l'association, Annonces, Culture, Solidarité |
 | Adhésion | `/adhesion/` | Pourquoi adhérer, qui peut adhérer, cotisation en $ US `[À FOURNIR]`, formulaire, bloc « Payer par Zelle » |
 | Faire un don | `/faire-un-don/` | À quoi servent les dons, montants suggérés, bloc « Payer par Zelle » |
-| Contact | `/contact/` | Formulaire, e-mail, Facebook, contacts par section |
+| Contact | `/contact/` | Formulaire, e-mail, contacts par section (Facebook quand la page existera) |
 | FAQ | `/faq/` | Adhésion, cotisation, activités (blocs Détails natifs) |
 | Merci | `/merci/` | Confirmation après l'envoi d'un formulaire (adhésion, contact) ; non indexée |
 | Mentions légales | `/mentions-legales/` | Nom, statut, adresse postale `[À FOURNIR]`, responsable de publication, hébergeur |
@@ -140,7 +140,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 1. **Bandeau d'ouverture** : grande photo de groupe `[À FOURNIR]` avec un voile vert assez sombre pour garder un contraste AA ; titre « La Famille Wê de Dallas & Oklahoma » ; slogan « Ensemble Allons Plus Loin » ; boutons « Devenir membre » (orange) et « Nos activités » (contour blanc).
 2. **Bienvenue** : 3 à 4 phrases sur la mission + lien « Qui sommes-nous ».
 3. **Ce que nous faisons** : 4 cartes avec icône `[À VALIDER]` (ex. Solidarité, Culture, Rencontres, Familles et jeunesse).
-4. **Prochaines activités** : les 3 prochaines (date, lieu, section) + « Voir toutes les activités ». S'il n'y en a aucune : « De nouvelles dates arrivent bientôt. Suivez-nous sur Facebook. »
+4. **Prochaines activités** : les 3 prochaines (date, lieu, section) + « Voir toutes les activités ». S'il n'y en a aucune : « De nouvelles dates arrivent bientôt. Revenez nous voir très vite ! » (renvoyer vers Facebook quand la page existera)
 5. **Nos deux sections** : Dallas et Oklahoma côte à côte, lien vers « Nos sections ».
 6. **En chiffres** : membres, années d'existence, activités par an `[À FOURNIR]`. Bloc masqué tant que les chiffres manquent.
 7. **Souvenirs** : 6 photos récentes des albums + « Voir la galerie ».
@@ -246,7 +246,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 ## 12. Informations à fournir par Max
 
 - [ ] Logo (SVG ou PNG ≥ 512 px) et son chemin sur le PC
-- [ ] URL de la page Facebook
+- [ ] Page Facebook : pas encore créée ; fournir son nom exact et son URL une fois en ligne
 - [ ] Histoire de l'association (année de création, fondateurs), mission, valeurs
 - [ ] Membres du bureau : noms, rôles, section, photos (avec leur accord)
 - [ ] Sections : responsables, villes, lieux et rythme des réunions

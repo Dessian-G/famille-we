@@ -253,7 +253,7 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 
 <!-- wp:group <?php echo $asso_carte_blanche; ?> -->
 <?php echo $asso_carte_blanche_html; ?><!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><?php echo esc_html__( 'De nouvelles dates arrivent bientôt. Suivez-nous sur Facebook.', 'asso-theme' ); ?></p>
+<p class="has-large-font-size"><?php echo esc_html__( 'De nouvelles dates arrivent bientôt. Revenez nous voir très vite&nbsp;! [À VALIDER]', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
