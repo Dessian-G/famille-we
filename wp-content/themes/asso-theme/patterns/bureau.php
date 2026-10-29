@@ -20,9 +20,9 @@ $asso_fonctions = array(
 <!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"14rem"}} -->
 <div class="wp-block-group alignwide">
 <?php foreach ( $asso_fonctions as $asso_fonction ) : ?>
-<!-- wp:group {"style":{"border":{"radius":"8px"},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|10"}},"backgroundColor":"creme","layout":{"type":"default"}} -->
-<div class="wp-block-group has-creme-background-color has-background" style="border-radius:8px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"border":{"radius":"8px"},"dimensions":{"minHeight":"200px"}},"backgroundColor":"blanc","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group has-blanc-background-color has-background" style="border-radius:8px;min-height:200px"><!-- wp:paragraph {"fontSize":"small"} -->
+<!-- wp:group {"style":{"border":{"radius":"24px"},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|10"}},"backgroundColor":"blanc","layout":{"type":"default"}} -->
+<div class="wp-block-group has-blanc-background-color has-background" style="border-radius:24px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"border":{"radius":"16px"},"dimensions":{"minHeight":"200px"}},"backgroundColor":"gris-leger","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-gris-leger-background-color has-background" style="border-radius:16px;min-height:200px"><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php echo esc_html__( '[À FOURNIR&nbsp;: photo, avec accord]', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->

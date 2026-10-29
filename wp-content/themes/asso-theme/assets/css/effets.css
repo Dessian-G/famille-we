@@ -64,7 +64,7 @@
 }
 
 .asso-entete-don .wp-block-button__link {
-	padding: 0.8rem 1.25rem;
+	padding: 0.625rem 1.25rem;
 	font-size: 1rem;
 }
 
@@ -322,6 +322,12 @@
 
 /* ---------- Cartes ---------- */
 
+/* Liseré pêche fin sur toutes les cartes blanches. */
+.wp-block-group.has-blanc-background-color,
+.asso-actus .wp-block-post {
+	border: 1px solid #f6d2b0;
+}
+
 .asso-carte {
 	transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease;
 }
@@ -407,6 +413,19 @@
 		width: 100%;
 		height: 24px;
 	}
+}
+
+/* ---------- En-têtes des pages intérieures ---------- */
+
+.asso-entete-page {
+	border-bottom: 1px solid rgb(31 42 36 / 0.2);
+}
+
+/* Point orange en signature, comme le « plus loin. » de l'accueil. */
+.asso-entete-page .wp-block-post-title::after,
+.asso-entete-page .wp-block-heading::after {
+	content: ".";
+	color: var(--wp--preset--color--orange-profond);
 }
 
 /* ---------- Apparitions au défilement (activées par effets.js) ---------- */

@@ -136,9 +136,15 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->
 <?php printf( $asso_section_html, '' ); ?><!-- wp:group {"className":"asso-revele","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
-<div class="wp-block-group asso-revele"><!-- wp:heading -->
+<div class="wp-block-group asso-revele"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"orange-profond","fontSize":"small"} -->
+<p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Nos piliers', 'asso-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Ce que nous faisons ensemble', 'asso-theme' ); ?></h2>
-<!-- /wp:heading -->
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( 'Quatre piliers qui font de l’association une vraie famille, à Dallas comme en Oklahoma. [À VALIDER]', 'asso-theme' ); ?></p>
@@ -230,9 +236,15 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 
 <!-- wp:group <?php printf( $asso_section, 'asso-revele' ); ?> -->
 <?php printf( $asso_section_html, 'asso-revele' ); ?><!-- wp:group {"style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
-<div class="wp-block-group"><!-- wp:heading -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"orange-profond","fontSize":"small"} -->
+<p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Agenda', 'asso-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Prochaines activités', 'asso-theme' ); ?></h2>
-<!-- /wp:heading -->
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"className":"asso-lien-fleche"} -->
 <p class="asso-lien-fleche"><a href="<?php echo esc_url( home_url( '/activites/' ) ); ?>"><?php echo esc_html__( 'Toutes les activités', 'asso-theme' ); ?></a></p>
@@ -247,9 +259,15 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:group -->
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->
-<?php printf( $asso_section_html, '' ); ?><!-- wp:heading {"className":"asso-revele"} -->
-<h2 class="wp-block-heading asso-revele"><?php echo esc_html__( 'Nos deux sections', 'asso-theme' ); ?></h2>
-<!-- /wp:heading -->
+<?php printf( $asso_section_html, '' ); ?><!-- wp:group {"className":"asso-revele","style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group asso-revele"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"orange-profond","fontSize":"small"} -->
+<p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Dallas & Oklahoma', 'asso-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Nos deux sections', 'asso-theme' ); ?></h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:group {"className":"asso-cascade","style":{"spacing":{"blockGap":"1.25rem"}},"layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"18rem"}} -->
 <div class="wp-block-group asso-cascade">
@@ -282,9 +300,15 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->
 <?php printf( $asso_section_html, '' ); ?><!-- wp:group {"className":"asso-revele","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
-<div class="wp-block-group asso-revele"><!-- wp:heading -->
+<div class="wp-block-group asso-revele"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"orange-profond","fontSize":"small"} -->
+<p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Galerie', 'asso-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Souvenirs', 'asso-theme' ); ?></h2>
-<!-- /wp:heading -->
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"className":"asso-lien-fleche"} -->
 <p class="asso-lien-fleche"><a href="<?php echo esc_url( home_url( '/galerie/' ) ); ?>"><?php echo esc_html__( 'Voir la galerie', 'asso-theme' ); ?></a></p>
@@ -306,9 +330,15 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->
 <?php printf( $asso_section_html, '' ); ?><!-- wp:group {"className":"asso-revele","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
-<div class="wp-block-group asso-revele"><!-- wp:heading -->
+<div class="wp-block-group asso-revele"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"orange-profond","fontSize":"small"} -->
+<p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Le journal de la famille', 'asso-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Actualités', 'asso-theme' ); ?></h2>
-<!-- /wp:heading -->
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph {"className":"asso-lien-fleche"} -->
 <p class="asso-lien-fleche"><a href="<?php echo esc_url( home_url( '/actualites/' ) ); ?>"><?php echo esc_html__( 'Toutes les actualités', 'asso-theme' ); ?></a></p>

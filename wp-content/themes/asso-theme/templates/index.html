@@ -1,14 +1,16 @@
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+<main class="wp-block-group" style="margin-top:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"className":"asso-entete-page","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|30"},"margin":{"bottom":"var:preset|spacing|30"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group asso-entete-page" style="margin-bottom:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:query-title {"type":"archive","showPrefix":false} /-->
 
 <!-- wp:query-title {"type":"search"} /-->
 
-<!-- wp:term-description /-->
+<!-- wp:term-description /--></div>
+<!-- /wp:group -->
 
-<!-- wp:query {"queryId":1,"query":{"inherit":true,"perPage":9},"align":"wide"} -->
-<div class="wp-block-query alignwide"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","minimumColumnWidth":"18rem"}} -->
+<!-- wp:query {"queryId":1,"query":{"inherit":true,"perPage":9},"align":"wide","className":"asso-actus"} -->
+<div class="wp-block-query alignwide asso-actus"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"grid","minimumColumnWidth":"18rem"}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 
 <!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->

@@ -113,12 +113,12 @@
 				}
 			],
 			"fontSizes": [
-				{ "slug": "small", "name": "Petit", "size": "0.9375rem", "fluid": false },
-				{ "slug": "medium", "name": "Normal", "size": "1.125rem", "fluid": { "min": "1rem", "max": "1.125rem" } },
-				{ "slug": "large", "name": "Grand", "size": "1.5rem", "fluid": { "min": "1.25rem", "max": "1.5rem" } },
-				{ "slug": "x-large", "name": "Très grand", "size": "3rem", "fluid": { "min": "1.875rem", "max": "3rem" } },
-				{ "slug": "xx-large", "name": "Énorme", "size": "4rem", "fluid": { "min": "2.5rem", "max": "4rem" } },
-				{ "slug": "xxx-large", "name": "Géant", "size": "6.5rem", "fluid": { "min": "3rem", "max": "6.5rem" } }
+				{ "slug": "small", "name": "Petit", "size": "0.875rem", "fluid": false },
+				{ "slug": "medium", "name": "Normal", "size": "1.0625rem", "fluid": { "min": "1rem", "max": "1.0625rem" } },
+				{ "slug": "large", "name": "Grand", "size": "1.25rem", "fluid": { "min": "1.125rem", "max": "1.25rem" } },
+				{ "slug": "x-large", "name": "Très grand", "size": "3rem", "fluid": { "min": "2rem", "max": "3rem" } },
+				{ "slug": "xx-large", "name": "Énorme", "size": "3.5rem", "fluid": { "min": "2.5rem", "max": "3.5rem" } },
+				{ "slug": "xxx-large", "name": "Géant", "size": "4.75rem", "fluid": { "min": "2.75rem", "max": "4.75rem" } }
 			]
 		},
 		"custom": {
@@ -140,7 +140,7 @@
 		"typography": {
 			"fontFamily": "var:preset|font-family|figtree",
 			"fontSize": "var:preset|font-size|medium",
-			"lineHeight": "1.6"
+			"lineHeight": "1.55"
 		},
 		"elements": {
 			"link": {
@@ -157,9 +157,9 @@
 				"color": { "text": "var:preset|color|vert" },
 				"typography": {
 					"fontFamily": "var:preset|font-family|bricolage",
-					"fontWeight": "800",
-					"letterSpacing": "-0.03em",
-					"lineHeight": "1.05"
+					"fontWeight": "700",
+					"letterSpacing": "-0.02em",
+					"lineHeight": "1.15"
 				}
 			},
 			"h1": { "typography": { "fontSize": "var:preset|font-size|xx-large" } },
@@ -175,13 +175,13 @@
 				},
 				"border": { "radius": "999px" },
 				"spacing": {
-					"padding": { "top": "1rem", "bottom": "1rem", "left": "1.75rem", "right": "1.75rem" }
+					"padding": { "top": "0.75rem", "bottom": "0.75rem", "left": "1.5rem", "right": "1.5rem" }
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|figtree",
-					"fontSize": "var:preset|font-size|medium",
-					"fontWeight": "700",
-					"lineHeight": "1.2"
+					"fontSize": "1rem",
+					"fontWeight": "600",
+					"lineHeight": "1.5"
 				},
 				":hover": {
 					"color": {
