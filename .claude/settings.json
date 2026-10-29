@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(studio.bat wp db reset *)",
+      "Bash(studio.bat wp db drop *)",
+      "Bash(studio wp db reset *)",
+      "Bash(studio wp db drop *)",
+      "Bash(wp db reset *)",
+      "Bash(wp db drop *)",
+      "Bash(studio.bat delete *)",
+      "Bash(studio delete *)",
+      "PowerShell(studio.bat wp db reset *)",
+      "PowerShell(studio.bat wp db drop *)",
+      "PowerShell(studio wp db reset *)",
+      "PowerShell(studio wp db drop *)",
+      "PowerShell(wp db reset *)",
+      "PowerShell(wp db drop *)",
+      "PowerShell(studio.bat delete *)",
+      "PowerShell(studio delete *)"
+    ]
+  }
+}

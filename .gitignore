@@ -19,3 +19,6 @@
 
 # Jamais suivi, quel que soit l'emplacement.
 .mcp.json
+
+# Autorisations personnelles de Claude Code, propres à chaque poste.
+/.claude/settings.local.json
