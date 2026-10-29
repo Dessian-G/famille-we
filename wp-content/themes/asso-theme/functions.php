@@ -56,12 +56,12 @@ function asso_theme_styles_editeur() {
 add_action( 'after_setup_theme', 'asso_theme_styles_editeur' );
 
 /**
- * Regroupe les motifs du thème dans une catégorie « La Famille WE » de l'éditeur.
+ * Regroupe les motifs du thème dans une catégorie « La Famille Wê » de l'éditeur.
  */
 function asso_theme_categorie_motifs() {
 	register_block_pattern_category(
 		'asso-theme',
-		array( 'label' => __( 'La Famille WE', 'asso-theme' ) )
+		array( 'label' => __( 'La Famille Wê', 'asso-theme' ) )
 	);
 }
 add_action( 'init', 'asso_theme_categorie_motifs' );

@@ -1,4 +1,4 @@
-# CLAUDE.md — Site de La Famille WE de Dallas & Oklahoma
+# CLAUDE.md — Site de La Famille Wê de Dallas & Oklahoma
 
 Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max est le responsable du projet : c'est lui qui valide chaque étape.
 
@@ -6,7 +6,7 @@ Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max e
 
 ## 1. L'association
 
-- **Nom complet** : La Famille WE de Dallas & Oklahoma (nom court : La Famille WE)
+- **Nom complet** : La Famille Wê de Dallas & Oklahoma (nom court : La Famille Wê)
 - **Slogan** : Ensemble Allons Plus Loin
 - **Qui sommes-nous** : association de la diaspora ivoirienne, avec deux sections, Dallas (Texas) et Oklahoma. Association laïque.
 - **Public** : membres et leurs familles, diaspora ivoirienne du Texas et de l'Oklahoma, sympathisants, partenaires.
@@ -40,7 +40,7 @@ Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max e
 | Instagram, WhatsApp, TikTok, YouTube | Aucun pour l'instant : ne pas afficher d'icône |
 
 - Afficher l'e-mail avec `antispambot()`, jamais en clair dans le HTML.
-- Chaque icône de réseau a un libellé accessible (ex. « Page Facebook de La Famille WE »).
+- Chaque icône de réseau a un libellé accessible (ex. « Page Facebook de La Famille Wê »).
 
 ---
 
@@ -92,11 +92,11 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
 - Badge rond fourni par Max le 29/10/2026 (capture de téléphone `famillewe.jpg`), découpé avec fond transparent :
   - `assets/images/logo-famille-we.png` (512 × 512, source de l'icône du site) ;
   - `assets/images/logo-famille-we-256.webp` (affiché dans l'en-tête et le pied de page).
-- En-tête : badge 52 px + logotype texte « La Famille WE » (Bricolage Grotesque 800, vert, « WE » en orange profond), un seul lien vers l'accueil ; badge seul sous 480 px, nom gardé pour les lecteurs d'écran.
+- En-tête : badge 52 px + logotype texte « La Famille Wê » (Bricolage Grotesque 800, vert, « Wê » en orange profond), un seul lien vers l'accueil ; badge seul sous 480 px, nom gardé pour les lecteurs d'écran.
 - Pied de page : badge 96 px cerclé de blanc, au-dessus du nom.
 - Icône du site : pièce jointe n° 32 de la médiathèque, réglée dans `site_icon`.
 - Une version vectorielle (SVG) ou un PNG haute définition sur fond transparent reste souhaitable `[À FOURNIR]` : la source actuelle est une capture compressée.
-- Orthographe : le badge écrit « Famille **Wê** » (accent circonflexe), le site écrit « WE » `[À VALIDER : orthographe officielle]`.
+- Orthographe officielle : « La Famille Wê », avec accent circonflexe (confirmée par Max le 29/10/2026).
 
 ---
 
@@ -112,7 +112,7 @@ Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésio
 ### Pied de page
 
 Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail, Facebook).
-Ligne du bas : © année La Famille WE · Mentions légales · Confidentialité.
+Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité.
 
 ### Pages
 
@@ -137,7 +137,7 @@ Ligne du bas : © année La Famille WE · Mentions légales · Confidentialité.
 
 ### 5.1 Page d'accueil (de haut en bas)
 
-1. **Bandeau d'ouverture** : grande photo de groupe `[À FOURNIR]` avec un voile vert assez sombre pour garder un contraste AA ; titre « La Famille WE de Dallas & Oklahoma » ; slogan « Ensemble Allons Plus Loin » ; boutons « Devenir membre » (orange) et « Nos activités » (contour blanc).
+1. **Bandeau d'ouverture** : grande photo de groupe `[À FOURNIR]` avec un voile vert assez sombre pour garder un contraste AA ; titre « La Famille Wê de Dallas & Oklahoma » ; slogan « Ensemble Allons Plus Loin » ; boutons « Devenir membre » (orange) et « Nos activités » (contour blanc).
 2. **Bienvenue** : 3 à 4 phrases sur la mission + lien « Qui sommes-nous ».
 3. **Ce que nous faisons** : 4 cartes avec icône `[À VALIDER]` (ex. Solidarité, Culture, Rencontres, Familles et jeunesse).
 4. **Prochaines activités** : les 3 prochaines (date, lieu, section) + « Voir toutes les activités ». S'il n'y en a aucune : « De nouvelles dates arrivent bientôt. Suivez-nous sur Facebook. »

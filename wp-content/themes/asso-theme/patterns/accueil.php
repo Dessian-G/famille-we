@@ -32,7 +32,7 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <div class="wp-block-group alignfull asso-bandeau" style="margin-top:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:heading {"level":1,"className":"asso-surtitre","style":{"typography":{"fontWeight":"700","letterSpacing":"0.04em"}},"textColor":"vert","fontFamily":"figtree","fontSize":"small"} -->
-<h1 class="wp-block-heading asso-surtitre has-vert-color has-text-color has-figtree-font-family has-small-font-size" style="font-weight:700;letter-spacing:0.04em"><?php echo esc_html__( 'La Famille WE de Dallas & Oklahoma', 'asso-theme' ); ?></h1>
+<h1 class="wp-block-heading asso-surtitre has-vert-color has-text-color has-figtree-font-family has-small-font-size" style="font-weight:700;letter-spacing:0.04em"><?php echo esc_html__( 'La Famille Wê de Dallas & Oklahoma', 'asso-theme' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"asso-titre-revele","style":{"typography":{"fontWeight":"800","letterSpacing":"-0.04em","lineHeight":"0.92"}},"textColor":"encre","fontFamily":"bricolage","fontSize":"xxx-large"} -->
@@ -77,7 +77,7 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:group -->
 
 <!-- wp:html -->
-<div class="asso-collage__tampon"><svg viewBox="0 0 160 160" role="img" aria-label="<?php echo esc_attr__( 'La Famille WE, Dallas, Oklahoma', 'asso-theme' ); ?>"><defs><path id="asso-cercle" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"></path></defs><circle cx="80" cy="80" r="78" fill="#F77F00"></circle><text fill="#1F2A24" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;letter-spacing:2px"><textPath href="#asso-cercle"><?php echo esc_html__( 'LA FAMILLE WE • DALLAS • OKLAHOMA •', 'asso-theme' ); ?></textPath></text><polygon points="80,62 98,80 80,98 62,80" fill="#00754A"></polygon></svg></div>
+<div class="asso-collage__tampon"><svg viewBox="0 0 160 160" role="img" aria-label="<?php echo esc_attr__( 'La Famille Wê, Dallas, Oklahoma', 'asso-theme' ); ?>"><defs><path id="asso-cercle" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"></path></defs><circle cx="80" cy="80" r="78" fill="#F77F00"></circle><text fill="#1F2A24" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;letter-spacing:2px"><textPath href="#asso-cercle"><?php echo esc_html__( 'LA FAMILLE WÊ • DALLAS • OKLAHOMA •', 'asso-theme' ); ?></textPath></text><polygon points="80,62 98,80 80,98 62,80" fill="#00754A"></polygon></svg></div>
 <!-- /wp:html -->
 
 <!-- wp:paragraph {"className":"asso-collage__pastille","style":{"typography":{"fontWeight":"700"}},"backgroundColor":"encre","textColor":"creme","fontFamily":"bricolage","fontSize":"small"} -->
