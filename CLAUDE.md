@@ -55,26 +55,37 @@ Ratios de contraste calculés selon WCAG 2.x (seuil AA : 4,5:1 pour le texte cou
 | Principale | Orange WE (`orange`) | `#F77F00` | Boutons d'action (Adhérer, Faire un don), aplats, détails décoratifs. Toujours avec texte `#1F2A24` (5,6:1). |
 | Principale foncée | Orange profond (`orange-profond`) | `#B35400` | Texte orange, liens au survol, boutons à texte blanc (5,0:1 sur blanc). |
 | Secondaire | Vert WE (`vert`) | `#00754A` | Titres, liens, en-tête, pied de page, boutons secondaires. Texte blanc dessus : 5,8:1. |
-| Fond | Blanc (`blanc`) | `#FFFFFF` | Fond principal. |
-| Fond doux | Crème (`creme`) | `#FFF7EE` | Sections alternées (vert dessus : 5,4:1 ; orange profond : 4,7:1). |
-| Texte | Encre (`encre`) | `#1F2A24` | Texte courant (14,8:1 sur blanc). |
+| Fond de page | Gris léger (`gris-leger`) | `#F3F4F2` | Fond principal du site (vert dessus : 5,2:1 ; orange profond : 4,55:1, réservé aux grands textes et accents). |
+| Cartes | Blanc (`blanc`) | `#FFFFFF` | Cartes et surfaces posées sur le gris léger. |
+| Fond doux | Crème (`creme`) | `#FFF7EE` | Texte sur fond encre, blocs d'appoint (vert dessus : 5,4:1 ; orange profond : 4,7:1). |
+| Texte | Encre (`encre`) | `#1F2A24` | Texte courant (13,5:1 sur gris léger, 14,8:1 sur blanc). |
 
-**Interdits** : texte blanc sur `#F77F00` (2,6:1) et texte `#F77F00` sur fond blanc. Pour de l'orange en texte, utiliser `#B35400`.
+**Interdits** : texte blanc sur `#F77F00` (2,6:1) et texte `#F77F00` sur fond blanc ou gris léger. Pour de l'orange en texte, utiliser `#B35400`.
 
-**Signature visuelle** : une fine bande tricolore orange-blanc-vert (4 px) tout en haut du site, en clin d'œil aux couleurs de la Côte d'Ivoire. Coins légèrement arrondis (8 px), ombres discrètes, photos de la communauté mises en avant.
+**Signature visuelle (direction D « Mélange », validée le 29/10/2026)** :
+- Bande tricolore orange-blanc-vert tout en haut, puis en-tête collant en verre dépoli (gris léger translucide et flouté). Liens du menu en encre : sur une section verte, le vert de l'en-tête translucide tombe à 3,8:1.
+- Motif géométrique inspiré des pagnes ivoiriens (`assets/images/motif-pagne.svg`), tampon rotatif, collage de photos en formes d'arche et de cadre.
+- Slogan en très grand dans le bandeau d'ouverture ; le H1 reste le nom de l'association.
+- Cartes très arrondies (24 px), boutons en pilule, ombres douces. Les maquettes sont sur le canevas Claude Design « La Famille WE — Directions visuelles ».
 
 ### Polices
 
 Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclarées dans `theme.json` (fontFace). Aucun appel à fonts.googleapis.com.
 
-- **Titres** : Montserrat 700 et 800.
-- **Texte** : Open Sans 400, 400 italique et 600.
+- **Titres** : Bricolage Grotesque 700 et 800.
+- **Texte** : Figtree 400, 400 italique, 600 et 700.
 - Texte courant : 18 px sur ordinateur, 16 px minimum sur mobile, interligne 1,6. Tailles de titres fluides (`clamp()`) dans `theme.json`.
+
+### Animations
+
+- Effets dans `assets/css/effets.css` et `assets/js/effets.js` (sans bibliothèque) : titre révélé ligne par ligne, apparitions au défilement, compteurs, bande défilante, collage flottant, tampon rotatif.
+- Toute animation qui dure plus de 5 secondes doit pouvoir être mise en pause (bouton « Pause » de la bande défilante, WCAG 2.2.2).
+- Réglage « réduire les animations » de l'appareil : aucune animation, état final affiché directement.
 
 ### Logo
 
 - Fichier : `[À FOURNIR]` (SVG idéal, sinon PNG d'au moins 512 px). Une fois fourni, le copier dans `wp-content/themes/asso-theme/assets/images/`.
-- En attendant : logotype texte « La Famille WE » en Montserrat 800, vert `#00754A`, avec « WE » en orange profond `#B35400`.
+- En attendant : logotype texte « La Famille WE » en Bricolage Grotesque 800, vert `#00754A`, avec « WE » en orange profond `#B35400`.
 - Icône du site (favicon) : 512 × 512, générée à partir du logo.
 
 ---
