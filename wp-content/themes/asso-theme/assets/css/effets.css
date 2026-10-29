@@ -1,0 +1,501 @@
+/*
+ * Effets visuels du thème asso-theme (direction D).
+ * Couleurs, polices, tailles et espacements restent dans theme.json :
+ * ce fichier ne contient que ce que theme.json ne sait pas exprimer
+ * (positionnements, motif, animations).
+ */
+
+/* ---------- Structure ---------- */
+
+/* Pas de marge entre le contenu et le pied de page. */
+.wp-site-blocks > footer {
+	margin-block-start: 0;
+}
+
+/* ---------- En-tête collant en verre dépoli ---------- */
+
+.wp-site-blocks > header.wp-block-template-part {
+	position: sticky;
+	top: var(--wp-admin--admin-bar--height, 0px);
+	z-index: 50;
+}
+
+@media (max-width: 600px) {
+	.wp-site-blocks > header.wp-block-template-part {
+		top: 0;
+	}
+}
+
+/*
+ * Le flou est posé sur un pseudo-élément : appliqué au conteneur lui-même,
+ * backdrop-filter enfermerait le menu mobile (position: fixed) dans l'en-tête.
+ */
+.asso-entete {
+	position: relative;
+	isolation: isolate;
+}
+
+.asso-entete::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: rgb(243 244 242 / 0.85);
+	-webkit-backdrop-filter: blur(14px) saturate(160%);
+	backdrop-filter: blur(14px) saturate(160%);
+	border-bottom: 1px solid rgb(31 42 36 / 0.08);
+	transition: box-shadow 0.3s ease;
+}
+
+.asso-a-defile .asso-entete::before {
+	box-shadow: 0 6px 24px rgb(31 42 36 / 0.08);
+}
+
+.asso-logotype a {
+	text-decoration: none;
+}
+
+.asso-logotype a:hover {
+	text-decoration: underline;
+}
+
+.asso-entete-don {
+	flex-shrink: 0;
+}
+
+.asso-entete-don .wp-block-button__link {
+	padding: 0.8rem 1.25rem;
+	font-size: 1rem;
+}
+
+/* Zones tactiles d'au moins 44 px dans le menu. */
+.wp-block-navigation__responsive-container-open,
+.wp-block-navigation__responsive-container-close {
+	padding: 10px;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content {
+	padding-top: 0.625rem;
+	padding-bottom: 0.625rem;
+}
+
+/* Menu hamburger jusqu'à 1024 px : le menu complet ne tient pas sur une ligne en tablette. */
+@media (min-width: 600px) and (max-width: 1023.98px) {
+	.asso-nav .wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: flex;
+	}
+
+	.asso-nav .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		display: none;
+	}
+}
+
+/* ---------- Motif pagne ---------- */
+
+.asso-motif-pagne {
+	background-color: var(--wp--preset--color--vert);
+	background-image: url("../images/motif-pagne.svg");
+	background-size: 48px 48px;
+}
+
+/* ---------- Bandeau d'ouverture ---------- */
+
+.asso-surtitre {
+	width: fit-content;
+	background: var(--wp--preset--color--blanc);
+	border-radius: 999px;
+	padding: 0.5rem 0.9rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.asso-titre-revele .asso-ligne {
+	display: block;
+	overflow: hidden;
+	padding-bottom: 0.06em;
+}
+
+.asso-titre-revele .asso-ligne > span {
+	display: block;
+	animation: asso-ligne 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.asso-separateur {
+	border-top: 1px solid rgb(31 42 36 / 0.2);
+}
+
+.asso-lien-fleche a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.6rem 0;
+	color: var(--wp--preset--color--encre);
+	font-weight: 700;
+	text-decoration: none;
+	border-bottom: 2px solid currentColor;
+}
+
+.asso-lien-fleche a::after {
+	content: "";
+	width: 1.2em;
+	height: 1.2em;
+	background: currentColor;
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+	animation: asso-fleche 1.6s ease-in-out infinite;
+}
+
+.asso-lien-fleche a:hover {
+	color: var(--wp--preset--color--vert);
+}
+
+/* Collage de photos : motif, arche, cadre, tampon rotatif et pastille. */
+.asso-collage {
+	position: relative;
+	min-height: 520px;
+}
+
+.asso-collage > * {
+	position: absolute;
+	margin: 0 !important;
+	box-sizing: border-box;
+}
+
+.asso-collage__motif {
+	top: 0;
+	right: 0;
+	width: 64%;
+	height: 58%;
+	border-radius: 28px;
+}
+
+.asso-collage__arche,
+.asso-collage__cadre {
+	display: flex;
+	align-items: flex-end;
+	padding: 1.25rem;
+	box-shadow: var(--wp--preset--shadow--marquee);
+	animation: asso-flotte 6s ease-in-out infinite;
+}
+
+.asso-collage__arche {
+	--asso-rotation: -4deg;
+	left: 2%;
+	top: 50px;
+	width: 240px;
+	height: 320px;
+	border-radius: 120px 120px 24px 24px;
+}
+
+.asso-collage__cadre {
+	--asso-rotation: 3deg;
+	right: 4%;
+	bottom: 10px;
+	width: 290px;
+	height: 200px;
+	border-radius: 28px;
+	animation-duration: 8s;
+	animation-delay: 1.2s;
+}
+
+.asso-collage__tampon {
+	left: 190px;
+	top: 0;
+	width: 132px;
+	height: 132px;
+	animation: asso-tourne 22s linear infinite;
+}
+
+.asso-collage__tampon svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Double classe : l'emporte sur p.has-background de WordPress. */
+.asso-collage .asso-collage__pastille {
+	left: 150px;
+	bottom: 60px;
+	padding: 0.75rem 1.1rem;
+	border-radius: 999px;
+	transform: rotate(-8deg);
+	animation: asso-pastille 0.7s 0.8s both;
+}
+
+@media (max-width: 781px) {
+	.asso-collage {
+		min-height: 400px;
+	}
+
+	.asso-collage__arche {
+		width: 180px;
+		height: 240px;
+		top: 40px;
+	}
+
+	.asso-collage__cadre {
+		width: 220px;
+		height: 150px;
+	}
+
+	.asso-collage__tampon {
+		left: auto;
+		right: 4%;
+		top: auto;
+		bottom: 175px;
+		width: 104px;
+		height: 104px;
+	}
+
+	.asso-collage .asso-collage__pastille {
+		left: 4%;
+		bottom: 20px;
+	}
+}
+
+/* ---------- Bande défilante ---------- */
+
+.asso-defile {
+	position: relative;
+	overflow: hidden;
+}
+
+.asso-defile__piste {
+	width: max-content;
+}
+
+.asso-defile__piste > * {
+	flex-shrink: 0;
+	margin: 0 !important;
+	padding-right: 2rem;
+	white-space: nowrap;
+}
+
+/* L'animation ne démarre qu'une fois la piste doublée par effets.js (boucle sans saut). */
+.asso-defile__piste.est-double {
+	animation: asso-defile 32s linear infinite;
+}
+
+.asso-pause-animations {
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	min-width: 44px;
+	min-height: 44px;
+	padding: 0.5rem 0.9rem;
+	border: 2px solid currentColor;
+	border-radius: 999px;
+	background: var(--wp--preset--color--vert);
+	color: var(--wp--preset--color--blanc);
+	font: 600 0.875rem/1 var(--wp--preset--font-family--figtree);
+	cursor: pointer;
+}
+
+.asso-pause-animations:focus-visible {
+	outline: 3px solid var(--wp--preset--color--blanc);
+	outline-offset: 3px;
+}
+
+/* ---------- Chiffres clés ---------- */
+
+.asso-chiffres {
+	border-top: 1px solid var(--wp--preset--color--encre);
+	border-bottom: 1px solid var(--wp--preset--color--encre);
+}
+
+.asso-chiffres > * {
+	padding: 1.75rem 1.5rem;
+}
+
+@media (min-width: 782px) {
+	.asso-chiffres > * + * {
+		border-left: 1px solid rgb(31 42 36 / 0.2);
+	}
+}
+
+@media (max-width: 781px) {
+	.asso-chiffres > * + * {
+		border-top: 1px solid rgb(31 42 36 / 0.2);
+	}
+}
+
+/* ---------- Cartes ---------- */
+
+.asso-carte {
+	transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.asso-carte:hover,
+.asso-js .asso-cascade.est-visible > .asso-carte:hover {
+	transform: translateY(-6px);
+	box-shadow: var(--wp--preset--shadow--marquee);
+	transition-delay: 0s;
+}
+
+.asso-carte__tete svg {
+	display: block;
+}
+
+/* Mosaïque des souvenirs. */
+.asso-mosaique {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-auto-rows: 140px;
+	gap: 1rem;
+}
+
+.asso-mosaique > * {
+	margin: 0 !important;
+}
+
+.asso-mosaique > :nth-child(1) {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.asso-mosaique > :nth-child(3) {
+	grid-row: span 2;
+}
+
+.asso-mosaique > :nth-child(5),
+.asso-mosaique > :nth-child(6) {
+	grid-column: span 2;
+}
+
+@media (max-width: 781px) {
+	.asso-mosaique {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-auto-rows: 120px;
+	}
+
+	.asso-mosaique > :nth-child(5),
+	.asso-mosaique > :nth-child(6) {
+		grid-column: span 1;
+	}
+}
+
+/* Actualités en cartes blanches. */
+.asso-actus .wp-block-post {
+	background: var(--wp--preset--color--blanc);
+	border-radius: 24px;
+	padding: 1.5rem;
+}
+
+/* Appel final : motif pagne sur le côté. */
+.asso-appel-final {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.asso-appel-final::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 30%;
+	z-index: -1;
+	background: var(--wp--preset--color--vert) url("../images/motif-pagne.svg");
+	background-size: 48px 48px;
+}
+
+@media (max-width: 781px) {
+	.asso-appel-final::after {
+		top: auto;
+		width: 100%;
+		height: 24px;
+	}
+}
+
+/* ---------- Apparitions au défilement (activées par effets.js) ---------- */
+
+.asso-js .asso-revele {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.asso-js .asso-revele.est-visible {
+	opacity: 1;
+	transform: none;
+}
+
+.asso-js .asso-cascade > * {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.asso-js .asso-cascade.est-visible > * {
+	opacity: 1;
+	transform: none;
+}
+
+.asso-js .asso-cascade.est-visible > :nth-child(2) { transition-delay: 0.1s; }
+.asso-js .asso-cascade.est-visible > :nth-child(3) { transition-delay: 0.2s; }
+.asso-js .asso-cascade.est-visible > :nth-child(4) { transition-delay: 0.3s; }
+.asso-js .asso-cascade.est-visible > :nth-child(5) { transition-delay: 0.4s; }
+.asso-js .asso-cascade.est-visible > :nth-child(6) { transition-delay: 0.5s; }
+
+/* ---------- Animations ---------- */
+
+@keyframes asso-ligne {
+	from { transform: translateY(105%); }
+	to { transform: none; }
+}
+
+@keyframes asso-fleche {
+	0%, 100% { transform: translateX(0); }
+	50% { transform: translateX(6px); }
+}
+
+@keyframes asso-flotte {
+	0%, 100% { transform: translateY(0) rotate(var(--asso-rotation, 0deg)); }
+	50% { transform: translateY(-12px) rotate(var(--asso-rotation, 0deg)); }
+}
+
+@keyframes asso-tourne {
+	to { transform: rotate(360deg); }
+}
+
+@keyframes asso-pastille {
+	0% { opacity: 0; transform: scale(0.6) rotate(-8deg); }
+	70% { transform: scale(1.06) rotate(-8deg); }
+	100% { opacity: 1; transform: scale(1) rotate(-8deg); }
+}
+
+@keyframes asso-defile {
+	to { transform: translateX(-50%); }
+}
+
+/* Bouton « Pause des animations » (WCAG 2.2.2). */
+.asso-pause *,
+.asso-pause *::after {
+	animation-play-state: paused !important;
+}
+
+/* Réglage « réduire les animations » de l'appareil : tout est affiché tel quel. */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+
+	.asso-js .asso-revele,
+	.asso-js .asso-cascade > * {
+		opacity: 1;
+		transform: none;
+	}
+
+	.asso-collage .asso-collage__pastille {
+		transform: rotate(-8deg);
+	}
+
+	.asso-pause-animations {
+		display: none;
+	}
+}
