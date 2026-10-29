@@ -175,7 +175,9 @@ Ligne du bas : © année La Famille WE · Mentions légales · Confidentialité.
 - Windows 11. Projet : `C:\Users\maxde\Studio\famille-we-de-dallas-oklahoma`.
 - Site local WordPress Studio : http://localhost:8881 — WordPress 7.1.4, base SQLite.
 - Dans Git Bash, toujours `studio.bat wp …` (`studio` seul est introuvable).
-- `studio.bat wp shell` n'existe pas : utiliser `studio.bat wp eval '…'`.
+- `studio.bat wp shell` n'existe pas. Pour exécuter du PHP, l'écrire dans un fichier et lancer `studio.bat wp eval-file chemin/du/fichier.php` : `studio.bat` passe par cmd.exe, qui casse les guillemets doubles (comme le `&`) d'un `studio.bat wp eval '…'`.
+- `studio.bat wp db query` ne fonctionne pas (il cherche MySQL) : lire la base SQLite avec `$wpdb` dans un `eval-file`.
+- Si toutes les pages affichent « Failed opening required …\router.php » : le fichier `router.php` manque dans l'installation de Studio (`studio_app\app-<version>\resources\cli\php\`). Le restaurer depuis le paquet `studio_app\packages\studio_app-<version>-full.nupkg` ou réinstaller Studio, puis `studio.bat stop` et `studio.bat start --skip-browser`.
 - Ne jamais toucher `wp-content/db.php` ni le mu-plugin `99-studio-loader` (intégration SQLite).
 - Ne jamais modifier le cœur de WordPress (`wp-admin/`, `wp-includes/`, fichiers à la racine).
 - Ne pas changer le titre du site en ligne de commande : le `&` passe mal à travers `studio.bat`. Max le fait dans WP Admin > Réglages > Général.
@@ -190,6 +192,7 @@ Ligne du bas : © année La Famille WE · Mentions légales · Confidentialité.
 - **Thème bloc `asso-theme` uniquement** (`wp-content/themes/asso-theme/`) :
   - Tout le style dans `theme.json` (couleurs, polices, tailles, espacements) ; CSS supplémentaire minimal.
   - Le design vit dans les fichiers du thème (`templates/`, `parts/`, `patterns/`), pas seulement dans l'éditeur. Si Max modifie un modèle dans l'éditeur du site, reporter la modification dans les fichiers.
+  - Après l'ajout d'un **nouveau fichier** dans `patterns/`, augmenter `Version` dans `style.css` : WordPress met en cache la liste des motifs du thème tant que la version ne change pas (avec une entrée de cache différente pour le serveur web et pour WP-CLI). Modifier un motif existant ne demande rien. Augmenter aussi la version après un changement de `assets/css` ou `assets/js`, pour que les navigateurs rechargent les fichiers.
 - **Extension métier `asso-core`** (`wp-content/plugins/asso-core/`) : types de contenu, taxonomies, métadonnées, blocs dynamiques. Rien de tout cela dans le thème.
 - **Nommage** : préfixe `asso_` pour fonctions, options, hooks et métadonnées ; domaines de traduction `asso-theme` et `asso-core`.
 - **Sécurité** : sorties échappées (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`), entrées assainies, nonce sur chaque formulaire et action, contrôle des capacités (`current_user_can`), requêtes préparées.
