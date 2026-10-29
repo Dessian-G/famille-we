@@ -1,0 +1,233 @@
+# CLAUDE.md — Site de La Famille WE de Dallas & Oklahoma
+
+Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max est le responsable du projet : c'est lui qui valide chaque étape.
+
+---
+
+## 1. L'association
+
+- **Nom complet** : La Famille WE de Dallas & Oklahoma (nom court : La Famille WE)
+- **Slogan** : Ensemble Allons Plus Loin
+- **Qui sommes-nous** : association de la diaspora ivoirienne, avec deux sections, Dallas (Texas) et Oklahoma. Association laïque.
+- **Public** : membres et leurs familles, diaspora ivoirienne du Texas et de l'Oklahoma, sympathisants, partenaires.
+- **Objectifs du site** :
+  1. Présenter l'association, ses valeurs, son bureau et ses deux sections.
+  2. Recruter de nouveaux membres.
+  3. Annoncer les activités et en garder la mémoire (galerie photos).
+  4. Collecter cotisations et dons en dollars américains par Zelle.
+  5. Faciliter le contact avec l'association.
+
+---
+
+## 2. Contenus et ton
+
+- **Langue** : français uniquement. Le thème et l'extension restent traduisibles pour une éventuelle version anglaise plus tard.
+- **Ton** : chaleureux, familial et rassembleur. On vouvoie le visiteur.
+- **Typographie française** : guillemets « », espace insécable avant : ; ! ? et avant $, majuscules accentuées (À, É, Ç).
+- **Monnaie** : dollar américain. Affichage `25 $ US`, `12,50 $ US` (virgule décimale, espace insécable).
+- **Dates et heures** : `samedi 14 novembre 2026`, `18 h 30`. Fuseau : America/Chicago (Dallas et l'Oklahoma sont tous deux à l'heure du Centre).
+- **Ne jamais inventer** de noms, chiffres, dates, montants, témoignages, partenaires ou photos. Mettre un repère visible `[À FOURNIR : …]` et tenir à jour la liste de la section 12.
+- Tout texte provisoire rédigé par Claude est marqué `[À VALIDER]` jusqu'à validation par Max.
+
+---
+
+## 3. Coordonnées et réseaux sociaux
+
+| Élément | Valeur |
+|---|---|
+| E-mail de contact | famillewededallas@gmail.com |
+| Facebook | Page « Famille WE Dallas-Oklahoma » — URL `[À FOURNIR]` |
+| Instagram, WhatsApp, TikTok, YouTube | Aucun pour l'instant : ne pas afficher d'icône |
+
+- Afficher l'e-mail avec `antispambot()`, jamais en clair dans le HTML.
+- Chaque icône de réseau a un libellé accessible (ex. « Page Facebook de La Famille WE »).
+
+---
+
+## 4. Charte graphique
+
+### Couleurs
+
+Ratios de contraste calculés selon WCAG 2.x (seuil AA : 4,5:1 pour le texte courant).
+
+| Rôle | Nom (slug theme.json) | Hex | Usage |
+|---|---|---|---|
+| Principale | Orange WE (`orange`) | `#F77F00` | Boutons d'action (Adhérer, Faire un don), aplats, détails décoratifs. Toujours avec texte `#1F2A24` (5,6:1). |
+| Principale foncée | Orange profond (`orange-profond`) | `#B35400` | Texte orange, liens au survol, boutons à texte blanc (5,0:1 sur blanc). |
+| Secondaire | Vert WE (`vert`) | `#00754A` | Titres, liens, en-tête, pied de page, boutons secondaires. Texte blanc dessus : 5,8:1. |
+| Fond | Blanc (`blanc`) | `#FFFFFF` | Fond principal. |
+| Fond doux | Crème (`creme`) | `#FFF7EE` | Sections alternées (vert dessus : 5,4:1 ; orange profond : 4,7:1). |
+| Texte | Encre (`encre`) | `#1F2A24` | Texte courant (14,8:1 sur blanc). |
+
+**Interdits** : texte blanc sur `#F77F00` (2,6:1) et texte `#F77F00` sur fond blanc. Pour de l'orange en texte, utiliser `#B35400`.
+
+**Signature visuelle** : une fine bande tricolore orange-blanc-vert (4 px) tout en haut du site, en clin d'œil aux couleurs de la Côte d'Ivoire. Coins légèrement arrondis (8 px), ombres discrètes, photos de la communauté mises en avant.
+
+### Polices
+
+Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclarées dans `theme.json` (fontFace). Aucun appel à fonts.googleapis.com.
+
+- **Titres** : Montserrat 700 et 800.
+- **Texte** : Open Sans 400, 400 italique et 600.
+- Texte courant : 18 px sur ordinateur, 16 px minimum sur mobile, interligne 1,6. Tailles de titres fluides (`clamp()`) dans `theme.json`.
+
+### Logo
+
+- Fichier : `[À FOURNIR]` (SVG idéal, sinon PNG d'au moins 512 px). Une fois fourni, le copier dans `wp-content/themes/asso-theme/assets/images/`.
+- En attendant : logotype texte « La Famille WE » en Montserrat 800, vert `#00754A`, avec « WE » en orange profond `#B35400`.
+- Icône du site (favicon) : 512 × 512, générée à partir du logo.
+
+---
+
+## 5. Arborescence
+
+### Menu principal
+
+Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésion · Contact · **[Faire un don]** (bouton orange)
+
+- Sous-menu « L'association » : Qui sommes-nous · Le bureau · Nos sections · Partenaires
+- Mobile : menu hamburger (bloc Navigation natif) ; le bouton « Faire un don » reste visible dans l'en-tête.
+
+### Pied de page
+
+Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail, Facebook).
+Ligne du bas : © année La Famille WE · Mentions légales · Confidentialité.
+
+### Pages
+
+| Page | Adresse | Contenu |
+|---|---|---|
+| Accueil | `/` (page statique) | Voir 5.1 |
+| Qui sommes-nous | `/qui-sommes-nous/` | Histoire, mission, valeurs, ce que nous faisons, mot du président `[À FOURNIR]` |
+| Le bureau | `/le-bureau/` | Cartes des membres du bureau (photo, nom, rôle, section) via un motif réutilisable |
+| Nos sections | `/nos-sections/` | Dallas et Oklahoma : présentation, responsable, ville, rythme des réunions, contact |
+| Partenaires | `/partenaires/` | Logos et liens ; masquée du menu tant qu'il n'y a pas de partenaire |
+| Activités | `/activites/` | Prochaines activités en haut, activités passées ensuite (avec lien vers l'album), filtre par section, fiche détaillée par activité |
+| Galerie | `/galerie/` | Albums par activité (couverture, titre, date, section) ; photos agrandies au clic |
+| Actualités | `/actualites/` | Page des articles. Catégories proposées `[À VALIDER]` : Vie de l'association, Annonces, Culture, Solidarité |
+| Adhésion | `/adhesion/` | Pourquoi adhérer, qui peut adhérer, cotisation en $ US `[À FOURNIR]`, formulaire, bloc « Payer par Zelle » |
+| Faire un don | `/faire-un-don/` | À quoi servent les dons, montants suggérés, bloc « Payer par Zelle » |
+| Contact | `/contact/` | Formulaire, e-mail, Facebook, contacts par section |
+| FAQ | `/faq/` | Adhésion, cotisation, activités (blocs Détails natifs) |
+| Merci | `/merci/` | Confirmation après l'envoi d'un formulaire (adhésion, contact) ; non indexée |
+| Mentions légales | `/mentions-legales/` | Nom, statut, adresse postale `[À FOURNIR]`, responsable de publication, hébergeur |
+| Confidentialité | `/confidentialite/` | Données collectées, paiements Zelle (traités par les banques, hors du site), cookies, droit à l'image |
+| Page 404 | modèle `404.html` | Message chaleureux + liens vers Accueil, Activités, Contact |
+
+### 5.1 Page d'accueil (de haut en bas)
+
+1. **Bandeau d'ouverture** : grande photo de groupe `[À FOURNIR]` avec un voile vert assez sombre pour garder un contraste AA ; titre « La Famille WE de Dallas & Oklahoma » ; slogan « Ensemble Allons Plus Loin » ; boutons « Devenir membre » (orange) et « Nos activités » (contour blanc).
+2. **Bienvenue** : 3 à 4 phrases sur la mission + lien « Qui sommes-nous ».
+3. **Ce que nous faisons** : 4 cartes avec icône `[À VALIDER]` (ex. Solidarité, Culture, Rencontres, Familles et jeunesse).
+4. **Prochaines activités** : les 3 prochaines (date, lieu, section) + « Voir toutes les activités ». S'il n'y en a aucune : « De nouvelles dates arrivent bientôt. Suivez-nous sur Facebook. »
+5. **Nos deux sections** : Dallas et Oklahoma côte à côte, lien vers « Nos sections ».
+6. **En chiffres** : membres, années d'existence, activités par an `[À FOURNIR]`. Bloc masqué tant que les chiffres manquent.
+7. **Souvenirs** : 6 photos récentes des albums + « Voir la galerie ».
+8. **Actualités** : les 3 derniers articles.
+9. **Appel final** (fond vert) : « Rejoignez la famille » + boutons « Adhérer » et « Faire un don ».
+
+---
+
+## 6. Contenus dynamiques (extension asso-core)
+
+- **Type de contenu `asso_event`** (Activités), adresse `/activites/nom-de-l-activite/` : titre, image, description, date et heure de début, date de fin (facultative), lieu, adresse (lien Google Maps), section, tarif en $ US (0 = gratuit), lien d'inscription ou de paiement (facultatif). « À venir » et « passées » sont calculées selon la date du jour, fuseau America/Chicago.
+- **Type de contenu `asso_album`** (Galerie), adresse `/galerie/nom-de-l-album/` : titre, date, section, activité liée (facultative), photos via le bloc Galerie natif avec « Agrandir au clic ».
+- **Taxonomie `asso_section`**, partagée par les deux types : Dallas, Oklahoma, Les deux sections.
+- **Métadonnées** : `register_post_meta()` avec `show_in_rest`, saisies dans un panneau de l'éditeur. Pas d'ACF sans accord de Max.
+- **Affichage** : préférer le bloc Boucle de requête (Query Loop) natif ; un bloc dynamique sur mesure seulement s'il ne suffit pas (ex. tri « à venir »).
+
+---
+
+## 7. Paiements, formulaires et données personnelles
+
+- **Paiements** (cotisations et dons) : **Zelle uniquement**, en USD. Aucun paiement en ligne sur le site : pas de Stripe, de PayPal ni d'extension de paiement.
+  - Zelle n'a ni bouton ni intégration web. Le site affiche des **instructions**, et le membre ou le donateur paie depuis l'application de sa propre banque.
+  - Motif réutilisable « Payer par Zelle » (`asso-theme/zelle`), affiché sur Adhésion et Faire un don :
+    1. Destinataire Zelle : `[À FOURNIR : e-mail ou numéro de téléphone enregistré chez Zelle]`, au nom de `[À FOURNIR : nom du titulaire tel qu'il s'affiche dans Zelle]`, avec un bouton « Copier » accessible.
+    2. Montant : cotisation `[À FOURNIR]` $ US, ou montant libre pour un don.
+    3. Mémo à indiquer : « Cotisation – Prénom Nom » ou « Don – Prénom Nom ».
+    4. QR code Zelle, facultatif `[À FOURNIR]`.
+    5. Rappel : vérifier le nom du destinataire avant d'envoyer, car un paiement Zelle ne peut généralement pas être annulé.
+  - Le destinataire Zelle est enregistré une seule fois dans une option `asso_zelle` (page de réglages d'asso-core), modifiable dans WP Admin sans toucher au code.
+  - Jamais de numéro de compte bancaire ni de numéro de routage sur le site.
+  - Le site ne peut pas savoir si un paiement a été reçu : le trésorier vérifie les paiements à la main. Ne jamais afficher « paiement confirmé » ni de statut de cotisation automatique.
+- **Formulaires** (contact, adhésion) : une extension reconnue, à valider avec Max (ex. Fluent Forms ou WPForms Lite). Case de consentement, anti-spam (champ piège), aucune donnée sensible demandée.
+- Ne jamais écrire qu'un don est « déductible des impôts » ni mentionner un statut 501(c)(3) sans confirmation de Max.
+- **Secrets** : aucune clé, aucun mot de passe, aucun jeton dans le code, dans ce fichier ou dans Git. Ils vont dans les réglages de l'extension concernée ou dans `wp-config.php`, hors Git.
+- **Droit à l'image** : publier uniquement les photos fournies et validées par Max ; pas de photo d'enfant identifiable sans l'accord des parents ; jamais de nom d'enfant.
+- **E-mails** : en local, ne pas compter sur l'envoi réel des e-mails, et ne pas en conclure qu'un formulaire est cassé. Pour la mise en ligne, prévoir un envoi SMTP (ex. WP Mail SMTP), à décider avec Max.
+
+---
+
+## 8. Environnement technique
+
+- Windows 11. Projet : `C:\Users\maxde\Studio\famille-we-de-dallas-oklahoma`.
+- Site local WordPress Studio : http://localhost:8881 — WordPress 7.1.4, base SQLite.
+- Dans Git Bash, toujours `studio.bat wp …` (`studio` seul est introuvable).
+- `studio.bat wp shell` n'existe pas : utiliser `studio.bat wp eval '…'`.
+- Ne jamais toucher `wp-content/db.php` ni le mu-plugin `99-studio-loader` (intégration SQLite).
+- Ne jamais modifier le cœur de WordPress (`wp-admin/`, `wp-includes/`, fichiers à la racine).
+- Ne pas changer le titre du site en ligne de commande : le `&` passe mal à travers `studio.bat`. Max le fait dans WP Admin > Réglages > Général.
+- Si une commande échoue avec « cURL error 60 » : s'arrêter et prévenir Max. Ne jamais désactiver la vérification SSL pour contourner.
+- Fichiers en UTF-8 sans BOM, fins de ligne LF.
+- Commandes interdites (aussi bloquées dans `.claude/settings.json`) : `wp db reset`, `wp db drop`, `studio delete`.
+
+---
+
+## 9. Règles de développement
+
+- **Thème bloc `asso-theme` uniquement** (`wp-content/themes/asso-theme/`) :
+  - Tout le style dans `theme.json` (couleurs, polices, tailles, espacements) ; CSS supplémentaire minimal.
+  - Le design vit dans les fichiers du thème (`templates/`, `parts/`, `patterns/`), pas seulement dans l'éditeur. Si Max modifie un modèle dans l'éditeur du site, reporter la modification dans les fichiers.
+- **Extension métier `asso-core`** (`wp-content/plugins/asso-core/`) : types de contenu, taxonomies, métadonnées, blocs dynamiques. Rien de tout cela dans le thème.
+- **Nommage** : préfixe `asso_` pour fonctions, options, hooks et métadonnées ; domaines de traduction `asso-theme` et `asso-core`.
+- **Sécurité** : sorties échappées (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`), entrées assainies, nonce sur chaque formulaire et action, contrôle des capacités (`current_user_can`), requêtes préparées.
+- **Textes** : tout texte affiché passe par les fonctions de traduction (`__()`, `esc_html__()`…).
+- **Extensions tierces** : justifier le besoin (alternatives, poids, maintenance) et demander l'accord de Max avant toute installation.
+- **Mobile d'abord** : vérifier à 375 px, 768 px et 1280 px. Zones tactiles d'au moins 44 px. Aucun défilement horizontal.
+- **Accessibilité WCAG AA** : contrastes de la section 4, texte alternatif sur chaque image informative, focus visible, navigation au clavier, lien « Aller au contenu », un seul H1 par page, hiérarchie des titres respectée, `lang="fr-FR"`.
+- **Performance** : images en WebP, 2000 px de large au maximum, chargement différé natif, pas de carrousel lourd, pas de jQuery côté visiteur, uniquement les graisses de police listées.
+- **Référencement** : un titre et une méta-description par page ; extension SEO éventuelle à valider avec Max.
+
+---
+
+## 10. Méthode de travail
+
+1. Avant chaque tâche : un plan court (fichiers touchés, étapes).
+2. Après chaque tâche : ce que Max doit vérifier, et où (URL, écran, taille d'écran).
+3. Un commit par étape validée, message en français (ex. « Ajoute le type de contenu Activités »).
+4. Rien sur un site en ligne (synchronisation, publication, hébergeur) sans l'accord explicite de Max.
+5. Si une information manque : poser la question, ou mettre un repère `[À FOURNIR]` et continuer.
+6. Répondre à Max en français, simplement, sans jargon inutile.
+
+### Ordre de construction
+
+1. Thème `asso-theme` : `theme.json`, polices, en-tête, pied de page, modèles de base.
+2. Pages et menus avec contenus provisoires.
+3. Extension `asso-core` : Activités, Galerie, sections.
+4. Page d'accueil complète.
+5. Formulaires et motif « Payer par Zelle ».
+6. FAQ, Mentions légales, Confidentialité, Merci, 404.
+7. Recette mobile, accessibilité et performance, puis préparation de la mise en ligne.
+
+---
+
+## 11. Fichiers suivis par Git
+
+`.gitignore` en liste blanche. Seuls sont suivis : `.gitignore`, `.gitattributes`, `CLAUDE.md`, `.claude/`, `scripts/`, `wp-content/themes/asso-theme/`, `wp-content/plugins/asso-core/`.
+`.mcp.json` est ignoré. `AGENTS.md` et `STUDIO.md` restent sur le disque, hors Git, et ne sont pas chargés par ce fichier.
+
+---
+
+## 12. Informations à fournir par Max
+
+- [ ] Logo (SVG ou PNG ≥ 512 px) et son chemin sur le PC
+- [ ] URL de la page Facebook
+- [ ] Histoire de l'association (année de création, fondateurs), mission, valeurs
+- [ ] Membres du bureau : noms, rôles, section, photos (avec leur accord)
+- [ ] Sections : responsables, villes, lieux et rythme des réunions
+- [ ] Montant de la cotisation et conditions d'adhésion
+- [ ] Statut juridique, adresse postale, statut fiscal des dons (501(c)(3) ou non)
+- [ ] Zelle : e-mail ou numéro destinataire, nom affiché dans Zelle, QR code éventuel
+- [ ] Photos (bandeau d'accueil, albums) et premières activités à annoncer
+- [ ] Chiffres clés (membres, années d'existence, activités par an)

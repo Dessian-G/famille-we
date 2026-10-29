@@ -1,0 +1,21 @@
+# Liste blanche : tout est ignoré, sauf ce qui est explicitement suivi.
+/*
+
+!/.gitignore
+!/.gitattributes
+!/CLAUDE.md
+!/.claude/
+!/scripts/
+
+# wp-content : seuls le thème asso-theme et l'extension asso-core sont suivis.
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/asso-theme/
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/asso-core/
+
+# Jamais suivi, quel que soit l'emplacement.
+.mcp.json
