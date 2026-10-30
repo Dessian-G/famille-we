@@ -13,7 +13,10 @@
 		pause: 'Pause',
 		lecture: 'Lecture',
 		pauseLibelle: 'Mettre en pause les animations',
-		lectureLibelle: 'Reprendre les animations'
+		lectureLibelle: 'Reprendre les animations',
+		copie: 'Copié !',
+		copieAnnonce: 'Destinataire Zelle copié dans le presse-papiers.',
+		copieEchec: 'La copie a échoué : sélectionnez le destinataire à la main.'
 	};
 
 	racine.classList.add( 'asso-js' );
@@ -38,6 +41,57 @@
 				.join( '' );
 		} );
 	}
+
+	/* Bloc Zelle : bouton « Copier le destinataire », affiché seulement si un destinataire est réglé. */
+	document.querySelectorAll( '.asso-zelle' ).forEach( function ( bloc ) {
+		var destinataire = bloc.querySelector( '.asso-zelle-destinataire' );
+		var bouton = bloc.querySelector( '.asso-zelle-copier button' );
+		if ( ! destinataire || ! bouton ) {
+			return;
+		}
+		bloc.classList.add( 'a-destinataire' );
+		var annonce = document.createElement( 'span' );
+		annonce.className = 'asso-visuellement-cache';
+		annonce.setAttribute( 'role', 'status' );
+		bouton.parentNode.appendChild( annonce );
+		var texteInitial = bouton.textContent;
+
+		function signaler( reussi ) {
+			annonce.textContent = reussi ? textes.copieAnnonce : textes.copieEchec;
+			bouton.textContent = reussi ? textes.copie : texteInitial;
+			window.setTimeout( function () {
+				bouton.textContent = texteInitial;
+				annonce.textContent = '';
+			}, 3000 );
+		}
+
+		bouton.addEventListener( 'click', function () {
+			var valeur = destinataire.textContent.trim();
+			if ( navigator.clipboard && window.isSecureContext ) {
+				navigator.clipboard.writeText( valeur ).then( function () {
+					signaler( true );
+				}, function () {
+					signaler( false );
+				} );
+				return;
+			}
+			// Ancien navigateur ou page non sécurisée : sélection puis copie classique.
+			var zone = document.createElement( 'textarea' );
+			zone.value = valeur;
+			zone.setAttribute( 'readonly', '' );
+			zone.className = 'asso-visuellement-cache';
+			document.body.appendChild( zone );
+			zone.select();
+			var reussi = false;
+			try {
+				reussi = document.execCommand( 'copy' );
+			} catch ( erreur ) {
+				reussi = false;
+			}
+			document.body.removeChild( zone );
+			signaler( reussi );
+		} );
+	} );
 
 	/* Compteur : un nombre entier qui monte de 0 à sa valeur. */
 	function animerCompteur( element ) {

@@ -24,11 +24,11 @@ defined( 'ABSPATH' ) || exit;
 <li><?php echo esc_html__( 'Ouvrez l’application de votre banque et choisissez Zelle.', 'asso-theme' ); ?></li>
 <!-- /wp:list-item -->
 
-<!-- wp:list-item -->
+<!-- wp:list-item {"metadata":{"bindings":{"content":{"source":"asso-core/zelle","args":{"cle":"ligne_destinataire"}}}}} -->
 <li><?php echo wp_kses_post( __( '<strong>Destinataire&nbsp;:</strong> [À FOURNIR&nbsp;: e-mail ou numéro de téléphone enregistré chez Zelle], au nom de [À FOURNIR&nbsp;: nom du titulaire tel qu’il s’affiche dans Zelle].', 'asso-theme' ) ); ?></li>
 <!-- /wp:list-item -->
 
-<!-- wp:list-item -->
+<!-- wp:list-item {"metadata":{"bindings":{"content":{"source":"asso-core/zelle","args":{"cle":"ligne_montant"}}}}} -->
 <li><?php echo wp_kses_post( __( '<strong>Montant&nbsp;:</strong> cotisation de [À FOURNIR]&nbsp;$&nbsp;US, ou le montant de votre choix pour un don.', 'asso-theme' ) ); ?></li>
 <!-- /wp:list-item -->
 
@@ -36,6 +36,12 @@ defined( 'ABSPATH' ) || exit;
 <li><?php echo wp_kses_post( __( '<strong>Mémo à indiquer&nbsp;:</strong> «&nbsp;Cotisation – Prénom Nom&nbsp;» ou «&nbsp;Don – Prénom Nom&nbsp;».', 'asso-theme' ) ); ?></li>
 <!-- /wp:list-item --></ol>
 <!-- /wp:list -->
+
+<!-- wp:buttons {"className":"asso-zelle-copier"} -->
+<div class="wp-block-buttons asso-zelle-copier"><!-- wp:button {"tagName":"button","className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><button type="button" class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Copier le destinataire', 'asso-theme' ); ?></button></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
 
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( '[À FOURNIR&nbsp;: QR code Zelle, facultatif]', 'asso-theme' ); ?></p>

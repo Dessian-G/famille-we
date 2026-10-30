@@ -42,6 +42,9 @@ function asso_theme_effets() {
 			'lecture'        => __( 'Lecture', 'asso-theme' ),
 			'pauseLibelle'   => __( 'Mettre en pause les animations', 'asso-theme' ),
 			'lectureLibelle' => __( 'Reprendre les animations', 'asso-theme' ),
+			'copie'          => __( 'Copié !', 'asso-theme' ),
+			'copieAnnonce'   => __( 'Destinataire Zelle copié dans le presse-papiers.', 'asso-theme' ),
+			'copieEchec'     => __( 'La copie a échoué : sélectionnez le destinataire à la main.', 'asso-theme' ),
 		)
 	);
 }
