@@ -468,9 +468,89 @@
 
 /* Point orange en signature, comme le « plus loin. » de l'accueil. */
 .asso-entete-page .wp-block-post-title::after,
+.asso-entete-page .wp-block-query-title::after,
 .asso-entete-page .wp-block-heading::after {
 	content: ".";
 	color: var(--wp--preset--color--orange-profond);
+}
+
+/* ---------- Activités et galerie (extension asso-core) ---------- */
+
+.wp-block-post-template > li > .asso-carte {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.asso-tuile-date {
+	flex: 0 0 76px;
+	box-sizing: border-box;
+	min-height: 84px;
+	padding: 0.75rem 0.5rem;
+	border-radius: 16px;
+	text-align: center;
+	gap: 0.2rem !important;
+}
+
+.asso-tuile-date p {
+	margin: 0;
+}
+
+.asso-tuile-date__jour {
+	font-family: var(--wp--preset--font-family--bricolage);
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1;
+}
+
+.asso-tuile-date__mois {
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.asso-carte-activite .wp-block-post-title {
+	margin: 0;
+}
+
+.asso-fiche-infos p {
+	margin: 0;
+}
+
+/* Filtre par section : le bouton actif est plein (aria-current posé par effets.js). */
+.asso-filtre-sections .wp-block-button__link {
+	padding: 0.5rem 1rem;
+	font-size: 0.9375rem;
+}
+
+.asso-filtre-sections .wp-block-button__link[aria-current="true"] {
+	border-color: var(--wp--preset--color--encre);
+	background-color: var(--wp--preset--color--encre);
+	color: var(--wp--preset--color--blanc);
+}
+
+.asso-carte-album .wp-block-post-featured-image {
+	margin: 0;
+}
+
+.asso-carte-album .wp-block-post-featured-image img {
+	border-radius: 16px;
+}
+
+/* Mosaïque des albums sur l'accueil : les couvertures remplissent leur case. */
+.asso-mosaique .wp-block-post-featured-image,
+.asso-mosaique .wp-block-post-featured-image a,
+.asso-mosaique .wp-block-post-featured-image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.asso-mosaique .wp-block-post-featured-image img {
+	border-radius: 16px;
+	object-fit: cover;
 }
 
 /* ---------- Apparitions au défilement (activées par effets.js) ---------- */

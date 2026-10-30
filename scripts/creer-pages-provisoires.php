@@ -29,14 +29,13 @@ if ( ! $asso_admins ) {
 wp_set_current_user( (int) $asso_admins[0] );
 
 // Adresse => titre, dans l'ordre du menu.
+// /activites/ et /galerie/ ne sont pas des pages : ce sont les listes automatiques de l'extension asso-core.
 $asso_pages = array(
 	'accueil'          => 'Accueil',
 	'qui-sommes-nous'  => 'Qui sommes-nous',
 	'le-bureau'        => 'Le bureau',
 	'nos-sections'     => 'Nos sections',
 	'partenaires'      => 'Partenaires',
-	'activites'        => 'Activités',
-	'galerie'          => 'Galerie',
 	'actualites'       => 'Actualités',
 	'adhesion'         => 'Adhésion',
 	'faire-un-don'     => 'Faire un don',

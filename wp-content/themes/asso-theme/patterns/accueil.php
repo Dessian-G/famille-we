@@ -251,11 +251,19 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
+<!-- wp:query {"queryId":3,"query":{"perPage":3,"pages":0,"offset":0,"postType":"asso_event","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"assoPeriode":"a-venir"}} -->
+<div class="wp-block-query"><!-- wp:post-template {"className":"asso-cascade","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"18rem"}} -->
+<?php echo asso_theme_carte_activite(); ?>
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
 <!-- wp:group <?php echo $asso_carte_blanche; ?> -->
 <?php echo $asso_carte_blanche_html; ?><!-- wp:paragraph {"fontSize":"large"} -->
 <p class="has-large-font-size"><?php echo esc_html__( 'De nouvelles dates arrivent bientôt. Revenez nous voir très vite&nbsp;! [À VALIDER]', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
 <!-- /wp:group -->
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->
@@ -315,6 +323,12 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
+<!-- wp:query {"queryId":4,"query":{"perPage":6,"pages":0,"offset":0,"postType":"asso_album","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"assoAvecCouverture":true}} -->
+<div class="wp-block-query"><!-- wp:post-template {"className":"asso-mosaique asso-cascade","layout":{"type":"default"}} -->
+<!-- wp:post-featured-image {"isLink":true} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
 <!-- wp:group {"className":"asso-mosaique asso-cascade","layout":{"type":"default"}} -->
 <div class="wp-block-group asso-mosaique asso-cascade">
 <?php for ( $asso_i = 0; $asso_i < 6; $asso_i++ ) : ?>
@@ -325,7 +339,9 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:group -->
 <?php endfor; ?>
 </div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
 <!-- /wp:group -->
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->

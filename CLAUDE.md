@@ -157,6 +157,17 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 - **Métadonnées** : `register_post_meta()` avec `show_in_rest`, saisies dans un panneau de l'éditeur. Pas d'ACF sans accord de Max.
 - **Affichage** : préférer le bloc Boucle de requête (Query Loop) natif ; un bloc dynamique sur mesure seulement s'il ne suffit pas (ex. tri « à venir »).
 
+### Mise en œuvre (extension asso-core 0.1.0, 29/10/2026)
+
+- **Champs** : `asso_debut`, `asso_fin` (`AAAA-MM-JJTHH:MM`, heure du Centre), `asso_lieu`, `asso_adresse`, `asso_tarif` (texte : vide = à préciser, `0` = gratuit), `asso_lien` ; album : `asso_date` (`AAAA-MM-JJ`), `asso_activite` (identifiant). Panneau « Détails » dans l'éditeur : `assets/js/panneau.js`, JavaScript sans compilation (modules `wp.*`).
+- **Boucles natives** : clés ajoutées à l'attribut `query` d'un bloc `core/query` et traitées par le filtre `query_loop_block_query_vars` (`includes/requetes.php`) :
+  - `"assoPeriode": "a-venir"` ou `"passees"` : tri par date de début, coupure à minuit du jour (fuseau du site) ;
+  - `"assoFiltreSection": true` : applique `?section=dallas|oklahoma` de l'adresse (« Les deux sections » reste incluse) ;
+  - `"assoAvecCouverture": true` : seulement les contenus qui ont une image mise en avant.
+- **Liaisons de blocs** : source `asso-core/activite` (`includes/liaisons.php`) avec la clé `cle` : `jour`, `mois`, `date_longue`, `quand`, `lieu`, `section`, `tarif`, `resume`, `lien_url`, `carte_url`, `album_url` (activité) ; `album_resume`, `activite_liee_url`, `activite_liee_titre` (album). Un bouton de classe `asso-si-lien` disparaît si son lien lié est vide.
+- **Thème** : modèles `archive-asso_event`, `single-asso_event`, `archive-asso_album`, `single-asso_album` ; motifs `liste-activites`, `fiche-activite`, `liste-albums`, `fiche-album` ; gabarits PHP `asso_theme_carte_activite()` et `asso_theme_filtre_sections()` dans `functions.php`. Les images s'agrandissent au clic (`theme.json`, visionneuse de `core/image`).
+- **Contenus** : `/activites/` et `/galerie/` sont les listes automatiques ; les anciennes pages provisoires du même nom sont en brouillon. Exemples marqués « À SUPPRIMER » : `scripts/creer-exemples-asso-core.php`.
+
 ---
 
 ## 7. Paiements, formulaires et données personnelles

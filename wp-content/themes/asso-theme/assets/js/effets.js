@@ -18,6 +18,15 @@
 
 	racine.classList.add( 'asso-js' );
 
+	/* Filtre par section : signale le bouton qui correspond à l'adresse actuelle. */
+	var sectionActive = new URLSearchParams( window.location.search ).get( 'section' ) || '';
+	document.querySelectorAll( '.asso-filtre-sections a' ).forEach( function ( lien ) {
+		var section = new URL( lien.href, window.location.href ).searchParams.get( 'section' ) || '';
+		if ( section === sectionActive ) {
+			lien.setAttribute( 'aria-current', 'true' );
+		}
+	} );
+
 	/* Titre : chaque segment séparé par un <br> devient une ligne animée. */
 	if ( ! mouvementReduit ) {
 		document.querySelectorAll( '.asso-titre-revele' ).forEach( function ( titre ) {

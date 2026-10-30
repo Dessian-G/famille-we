@@ -123,6 +123,11 @@
 		},
 		"custom": {
 			"radius": "24px"
+		},
+		"blocks": {
+			"core/image": {
+				"lightbox": { "enabled": true, "allowEditing": true }
+			}
 		}
 	},
 	"styles": {
