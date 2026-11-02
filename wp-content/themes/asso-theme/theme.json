@@ -116,9 +116,9 @@
 				{ "slug": "small", "name": "Petit", "size": "0.875rem", "fluid": false },
 				{ "slug": "medium", "name": "Normal", "size": "1.0625rem", "fluid": { "min": "1rem", "max": "1.0625rem" } },
 				{ "slug": "large", "name": "Grand", "size": "1.25rem", "fluid": { "min": "1.125rem", "max": "1.25rem" } },
-				{ "slug": "x-large", "name": "Très grand", "size": "3rem", "fluid": { "min": "2rem", "max": "3rem" } },
-				{ "slug": "xx-large", "name": "Énorme", "size": "3.5rem", "fluid": { "min": "2.5rem", "max": "3.5rem" } },
-				{ "slug": "xxx-large", "name": "Géant", "size": "4.75rem", "fluid": { "min": "2.75rem", "max": "4.75rem" } }
+				{ "slug": "x-large", "name": "Très grand", "size": "2.25rem", "fluid": { "min": "1.625rem", "max": "2.25rem" } },
+				{ "slug": "xx-large", "name": "Énorme", "size": "2.75rem", "fluid": { "min": "2rem", "max": "2.75rem" } },
+				{ "slug": "xxx-large", "name": "Géant", "size": "3.75rem", "fluid": { "min": "2.25rem", "max": "3.75rem" } }
 			]
 		},
 		"custom": {
