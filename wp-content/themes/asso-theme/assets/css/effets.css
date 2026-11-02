@@ -40,7 +40,7 @@
 	position: absolute;
 	inset: 0;
 	z-index: -1;
-	background: rgb(243 244 242 / 0.85);
+	background: rgb(227 238 249 / 0.85);
 	-webkit-backdrop-filter: blur(14px) saturate(160%);
 	backdrop-filter: blur(14px) saturate(160%);
 	border-bottom: 1px solid rgb(31 42 36 / 0.08);
@@ -191,7 +191,7 @@
 }
 
 .asso-lien-fleche a:hover {
-	color: var(--wp--preset--color--vert);
+	color: var(--wp--preset--color--bleu);
 }
 
 /* Collage de photos : motif, arche, cadre, tampon rotatif et pastille. */
@@ -582,8 +582,8 @@
 }
 
 .asso-formulaire .fluentform .ff-el-form-control:focus {
-	border-color: var(--wp--preset--color--vert);
-	outline: 3px solid rgb(0 117 74 / 0.35);
+	border-color: var(--wp--preset--color--bleu);
+	outline: 3px solid rgb(31 90 166 / 0.35);
 	outline-offset: 1px;
 }
 
@@ -591,7 +591,7 @@
 .asso-formulaire .fluentform input[type="checkbox"] {
 	width: 1.15rem;
 	height: 1.15rem;
-	accent-color: var(--wp--preset--color--vert);
+	accent-color: var(--wp--preset--color--bleu);
 }
 
 .asso-formulaire .fluentform .ff-el-is-required.asterisk-right label::after {

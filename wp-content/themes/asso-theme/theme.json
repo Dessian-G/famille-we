@@ -13,9 +13,11 @@
 			"duotone": [],
 			"palette": [
 				{ "slug": "orange", "name": "Orange WE", "color": "#F77F00" },
-				{ "slug": "orange-profond", "name": "Orange profond", "color": "#B35400" },
+				{ "slug": "orange-profond", "name": "Orange profond", "color": "#A64E00" },
 				{ "slug": "vert", "name": "Vert WE", "color": "#00754A" },
+				{ "slug": "bleu", "name": "Bleu WE", "color": "#1F5AA6" },
 				{ "slug": "blanc", "name": "Blanc", "color": "#FFFFFF" },
+				{ "slug": "bleu-ciel", "name": "Bleu ciel", "color": "#E3EEF9" },
 				{ "slug": "gris-leger", "name": "Gris léger", "color": "#F3F4F2" },
 				{ "slug": "creme", "name": "Crème", "color": "#FFF7EE" },
 				{ "slug": "encre", "name": "Encre", "color": "#1F2A24" }
@@ -132,7 +134,7 @@
 	},
 	"styles": {
 		"color": {
-			"background": "var:preset|color|gris-leger",
+			"background": "var:preset|color|bleu-ciel",
 			"text": "var:preset|color|encre"
 		},
 		"spacing": {
@@ -149,7 +151,7 @@
 		},
 		"elements": {
 			"link": {
-				"color": { "text": "var:preset|color|vert" },
+				"color": { "text": "var:preset|color|bleu" },
 				"typography": { "textDecoration": "underline" },
 				":hover": {
 					"color": { "text": "var:preset|color|orange-profond" }
@@ -159,7 +161,7 @@
 				}
 			},
 			"heading": {
-				"color": { "text": "var:preset|color|vert" },
+				"color": { "text": "var:preset|color|bleu" },
 				"typography": {
 					"fontFamily": "var:preset|font-family|bricolage",
 					"fontWeight": "700",

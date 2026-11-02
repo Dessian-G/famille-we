@@ -53,17 +53,19 @@ Ratios de contraste calculés selon WCAG 2.x (seuil AA : 4,5:1 pour le texte cou
 | Rôle | Nom (slug theme.json) | Hex | Usage |
 |---|---|---|---|
 | Principale | Orange WE (`orange`) | `#F77F00` | Boutons d'action (Adhérer, Faire un don), aplats, détails décoratifs. Toujours avec texte `#1F2A24` (5,6:1). |
-| Principale foncée | Orange profond (`orange-profond`) | `#B35400` | Texte orange, liens au survol, boutons à texte blanc (5,0:1 sur blanc). |
-| Secondaire | Vert WE (`vert`) | `#00754A` | Titres, liens, en-tête, pied de page, boutons secondaires. Texte blanc dessus : 5,8:1. |
-| Fond de page | Gris léger (`gris-leger`) | `#F3F4F2` | Fond principal du site (vert dessus : 5,2:1 ; orange profond : 4,55:1, réservé aux grands textes et accents). |
-| Cartes | Blanc (`blanc`) | `#FFFFFF` | Cartes et surfaces posées sur le gris léger. |
-| Fond doux | Crème (`creme`) | `#FFF7EE` | Texte sur fond encre, blocs d'appoint (vert dessus : 5,4:1 ; orange profond : 4,7:1). |
-| Texte | Encre (`encre`) | `#1F2A24` | Texte courant (13,5:1 sur gris léger, 14,8:1 sur blanc). |
+| Principale foncée | Orange profond (`orange-profond`) | `#A64E00` | Texte orange (surtitres, dates), liens au survol, boutons à texte blanc (5,7:1 sur blanc). Foncé le 02/11/2026 (avant `#B35400`) pour rester lisible sur le fond bleu ciel. |
+| Titres et liens | Bleu WE (`bleu`) | `#1F5AA6` | Titres, liens, logotype de l'en-tête, chiffres clés. Texte blanc dessus : 6,8:1. Ajouté le 02/11/2026 à la demande de Max : le vert ne doit plus dominer dans les textes. |
+| Secondaire | Vert WE (`vert`) | `#00754A` | Pied de page, aplats (bande défilante, tuiles de date, appel final), « plus loin » du slogan. Plus utilisé pour les titres ni les liens. Texte blanc dessus : 5,8:1. |
+| Fond de page | Bleu ciel (`bleu-ciel`) | `#E3EEF9` | Fond principal du site, volontairement visible derrière les cartes blanches (bleu dessus : 5,8:1 ; orange profond : 4,8:1 ; vert : 4,9:1). |
+| Fond d'attente | Gris léger (`gris-leger`) | `#F3F4F2` | Emplacements de photos en attente dans les cartes (ancien fond de page). |
+| Cartes | Blanc (`blanc`) | `#FFFFFF` | Cartes et surfaces posées sur le bleu ciel. |
+| Fond doux | Crème (`creme`) | `#FFF7EE` | Texte sur fond encre, blocs d'appoint (vert dessus : 5,4:1 ; orange profond : 5,3:1). |
+| Texte | Encre (`encre`) | `#1F2A24` | Texte courant (12,6:1 sur bleu ciel, 14,8:1 sur blanc). |
 
-**Interdits** : texte blanc sur `#F77F00` (2,6:1) et texte `#F77F00` sur fond blanc ou gris léger. Pour de l'orange en texte, utiliser `#B35400`.
+**Interdits** : texte blanc sur `#F77F00` (2,6:1) et texte `#F77F00` sur fond blanc ou bleu ciel. Pour de l'orange en texte, utiliser `#A64E00`.
 
 **Signature visuelle (direction D « Mélange », validée le 29/10/2026)** :
-- Bande tricolore orange-blanc-vert tout en haut, puis en-tête collant en verre dépoli (gris léger translucide et flouté). Liens du menu en encre : sur une section verte, le vert de l'en-tête translucide tombe à 3,8:1.
+- Bande tricolore orange-blanc-vert tout en haut, puis en-tête collant en verre dépoli (bleu ciel translucide et flouté). Liens du menu en encre : ils restent lisibles quelle que soit la section qui passe sous l'en-tête translucide.
 - Motif géométrique inspiré des pagnes ivoiriens (`assets/images/motif-pagne.svg`), tampon rotatif, collage de photos en formes d'arche et de cadre.
 - Slogan en très grand dans le bandeau d'ouverture ; le H1 reste le nom de l'association.
 - Cartes très arrondies (24 px), boutons en pilule, ombres douces. Les maquettes sont sur le canevas Claude Design « La Famille WE — Directions visuelles ».
@@ -92,7 +94,7 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
 - Badge rond fourni par Max le 29/10/2026 (capture de téléphone `famillewe.jpg`), découpé avec fond transparent :
   - `assets/images/logo-famille-we.png` (512 × 512, source de l'icône du site) ;
   - `assets/images/logo-famille-we-256.webp` (affiché dans l'en-tête et le pied de page).
-- En-tête : badge 52 px + logotype texte « La Famille Wê » (Bricolage Grotesque 800, vert, « Wê » en orange profond), un seul lien vers l'accueil ; badge seul sous 480 px, nom gardé pour les lecteurs d'écran.
+- En-tête : badge 52 px + logotype texte « La Famille Wê » (Bricolage Grotesque 800, bleu, « Wê » en orange profond), un seul lien vers l'accueil ; badge seul sous 480 px, nom gardé pour les lecteurs d'écran.
 - Pied de page : badge 96 px cerclé de blanc, au-dessus du nom.
 - Icône du site : pièce jointe n° 32 de la médiathèque, réglée dans `site_icon`.
 - Une version vectorielle (SVG) ou un PNG haute définition sur fond transparent reste souhaitable `[À FOURNIR]` : la source actuelle est une capture compressée.

@@ -14,8 +14,8 @@ defined( 'ABSPATH' ) || exit;
 // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 ?>
 <!-- wp:group {"className":"asso-entete-page","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|30"},"margin":{"bottom":"var:preset|spacing|30"},"blockGap":"0.75rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group asso-entete-page" style="margin-bottom:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:paragraph {<?php echo asso_theme_liaison( 'album_resume' ); ?>,"style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}},"textColor":"vert","fontSize":"small"} -->
-<p class="has-vert-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase"><?php echo esc_html__( 'Album photo', 'asso-theme' ); ?></p>
+<div class="wp-block-group asso-entete-page" style="margin-bottom:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:paragraph {<?php echo asso_theme_liaison( 'album_resume' ); ?>,"style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}},"textColor":"orange-profond","fontSize":"small"} -->
+<p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:600;letter-spacing:0.06em;text-transform:uppercase"><?php echo esc_html__( 'Album photo', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-title {"level":1} /--></div>

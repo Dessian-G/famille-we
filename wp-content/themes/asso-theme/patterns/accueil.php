@@ -31,8 +31,8 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- wp:group {"align":"full","className":"asso-bandeau","style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","contentSize":"75rem"}} -->
 <div class="wp-block-group alignfull asso-bandeau" style="margin-top:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:heading {"level":1,"className":"asso-surtitre","style":{"typography":{"fontWeight":"700","letterSpacing":"0.04em"}},"textColor":"vert","fontFamily":"figtree","fontSize":"small"} -->
-<h1 class="wp-block-heading asso-surtitre has-vert-color has-text-color has-figtree-font-family has-small-font-size" style="font-weight:700;letter-spacing:0.04em"><?php echo esc_html__( 'La Famille Wê de Dallas & Oklahoma', 'asso-theme' ); ?></h1>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%"><!-- wp:heading {"level":1,"className":"asso-surtitre","style":{"typography":{"fontWeight":"700","letterSpacing":"0.04em"}},"textColor":"bleu","fontFamily":"figtree","fontSize":"small"} -->
+<h1 class="wp-block-heading asso-surtitre has-bleu-color has-text-color has-figtree-font-family has-small-font-size" style="font-weight:700;letter-spacing:0.04em"><?php echo esc_html__( 'La Famille Wê de Dallas & Oklahoma', 'asso-theme' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"asso-titre-revele","style":{"typography":{"fontWeight":"800","letterSpacing":"-0.04em","lineHeight":"0.92"}},"textColor":"encre","fontFamily":"bricolage","fontSize":"xxx-large"} -->
@@ -99,8 +99,8 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- wp:group <?php printf( $asso_section, 'asso-revele' ); ?> -->
 <?php printf( $asso_section_html, 'asso-revele' ); ?><!-- wp:group {"className":"asso-chiffres","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"14rem"}} -->
 <div class="wp-block-group asso-chiffres"><!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"blockGap":"0.5rem"}}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"asso-compteur","style":{"typography":{"fontWeight":"800","lineHeight":"1"}},"textColor":"vert","fontFamily":"bricolage","fontSize":"xx-large"} -->
-<p class="asso-compteur has-vert-color has-text-color has-bricolage-font-family has-xx-large-font-size" style="font-weight:800;line-height:1">—</p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"asso-compteur","style":{"typography":{"fontWeight":"800","lineHeight":"1"}},"textColor":"bleu","fontFamily":"bricolage","fontSize":"xx-large"} -->
+<p class="asso-compteur has-bleu-color has-text-color has-bricolage-font-family has-xx-large-font-size" style="font-weight:800;line-height:1">—</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}},"fontSize":"small"} -->
@@ -109,8 +109,8 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"blockGap":"0.5rem"}}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"asso-compteur","style":{"typography":{"fontWeight":"800","lineHeight":"1"}},"textColor":"vert","fontFamily":"bricolage","fontSize":"xx-large"} -->
-<p class="asso-compteur has-vert-color has-text-color has-bricolage-font-family has-xx-large-font-size" style="font-weight:800;line-height:1">2</p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"asso-compteur","style":{"typography":{"fontWeight":"800","lineHeight":"1"}},"textColor":"bleu","fontFamily":"bricolage","fontSize":"xx-large"} -->
+<p class="asso-compteur has-bleu-color has-text-color has-bricolage-font-family has-xx-large-font-size" style="font-weight:800;line-height:1">2</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}},"fontSize":"small"} -->
@@ -119,8 +119,8 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"blockGap":"0.5rem"}}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"asso-compteur","style":{"typography":{"fontWeight":"800","lineHeight":"1"}},"textColor":"vert","fontFamily":"bricolage","fontSize":"xx-large"} -->
-<p class="asso-compteur has-vert-color has-text-color has-bricolage-font-family has-xx-large-font-size" style="font-weight:800;line-height:1">—</p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"asso-compteur","style":{"typography":{"fontWeight":"800","lineHeight":"1"}},"textColor":"bleu","fontFamily":"bricolage","fontSize":"xx-large"} -->
+<p class="asso-compteur has-bleu-color has-text-color has-bricolage-font-family has-xx-large-font-size" style="font-weight:800;line-height:1">—</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"}},"fontSize":"small"} -->
