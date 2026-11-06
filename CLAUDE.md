@@ -78,7 +78,7 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
 - **Texte** : Figtree 400, 400 italique, 600 et 700.
 - Échelle inspirée de joinit.com/features (mesurée le 29/10/2026), tailles fluides (`clamp()`) dans `theme.json` :
   - texte courant 17 px sur ordinateur, 16 px sur mobile, interligne 1,55 ; petit texte 14 px (libellés, dates, mentions) ;
-  - titres de cartes (H3) 20 px ; titres de section (H2) 36 px, 26 px sur mobile ; titres de page (H1) 44 px, 32 px sur mobile ; slogan de l'accueil 60 px, 36 px sur mobile (titres réduits à la demande de Max le 02/11/2026) ;
+  - titres de cartes (H3) 20 px ; titres de page (H1) et intertitres (H2) des pages intérieures 26 px, 20 px sur mobile, soit la taille du logotype de l'en-tête (demande de Max du 06/11/2026) ; titres de section de l'accueil 36 px, 26 px sur mobile (taille fixée dans le motif `accueil`) ; slogan de l'accueil 60 px, 36 px sur mobile ;
   - titres en Bricolage 700 (800 réservé au slogan et aux grands chiffres), interlettrage -0,02 em ;
   - boutons de 48 px de haut, texte 16 px en Figtree 600 ;
   - petit surtitre en capitales orange profond au-dessus des titres de section ; liseré pêche `#F6D2B0` de 1 px sur les cartes blanches.

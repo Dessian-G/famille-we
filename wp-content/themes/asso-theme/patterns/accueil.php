@@ -154,8 +154,8 @@ $asso_souvenirs   = asso_theme_souvenirs( 6 );
 <p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Nos piliers', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Ce que nous faisons ensemble', 'asso-theme' ); ?></h2>
+<!-- wp:heading {"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Ce que nous faisons ensemble', 'asso-theme' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -254,8 +254,8 @@ $asso_souvenirs   = asso_theme_souvenirs( 6 );
 <p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Agenda', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Prochaines activités', 'asso-theme' ); ?></h2>
+<!-- wp:heading {"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Prochaines activités', 'asso-theme' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -285,8 +285,8 @@ $asso_souvenirs   = asso_theme_souvenirs( 6 );
 <p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Dallas & Oklahoma', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Nos deux sections', 'asso-theme' ); ?></h2>
+<!-- wp:heading {"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Nos deux sections', 'asso-theme' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -326,8 +326,8 @@ $asso_souvenirs   = asso_theme_souvenirs( 6 );
 <p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Galerie', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Souvenirs', 'asso-theme' ); ?></h2>
+<!-- wp:heading {"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Souvenirs', 'asso-theme' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -360,8 +360,8 @@ $asso_souvenirs   = asso_theme_souvenirs( 6 );
 <p class="has-orange-profond-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Le journal de la famille', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Actualités', 'asso-theme' ); ?></h2>
+<!-- wp:heading {"fontSize":"x-large"} -->
+<h2 class="wp-block-heading has-x-large-font-size"><?php echo esc_html__( 'Actualités', 'asso-theme' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 

@@ -169,8 +169,8 @@
 					"lineHeight": "1.15"
 				}
 			},
-			"h1": { "typography": { "fontSize": "var:preset|font-size|xx-large" } },
-			"h2": { "typography": { "fontSize": "var:preset|font-size|x-large" } },
+			"h1": { "typography": { "fontSize": "clamp(1.25rem, 1rem + 0.7vw, 1.625rem)" } },
+			"h2": { "typography": { "fontSize": "clamp(1.25rem, 1rem + 0.7vw, 1.625rem)" } },
 			"h3": { "typography": { "fontSize": "var:preset|font-size|large", "letterSpacing": "-0.01em" } },
 			"h4": { "typography": { "fontSize": "var:preset|font-size|medium", "letterSpacing": "0" } },
 			"h5": { "typography": { "fontSize": "var:preset|font-size|medium", "letterSpacing": "0" } },
