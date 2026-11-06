@@ -162,3 +162,108 @@ function asso_theme_filtre_sections( $chemin ) {
 	<?php
 	return ob_get_clean();
 }
+
+/**
+ * Bloc Image d'un média de la médiathèque (sans visionneuse).
+ *
+ * @param int    $id     Identifiant du média.
+ * @param string $classe Classe CSS du bloc (facultative).
+ * @param string $taille Taille d'image WordPress.
+ * @param string $lien   Adresse vers laquelle la photo renvoie (facultative).
+ * @param bool   $differe Chargement différé, pour une photo loin du haut de page.
+ * @return string Balisage de blocs, vide si le média n'existe pas.
+ */
+function asso_theme_bloc_image( $id, $classe = '', $taille = 'large', $lien = '', $differe = false ) {
+	$url = wp_get_attachment_image_url( $id, $taille );
+	if ( ! $url ) {
+		return '';
+	}
+	$attributs = array(
+		'id'              => (int) $id,
+		'sizeSlug'        => $taille,
+		'linkDestination' => $lien ? 'custom' : 'none',
+		'lightbox'        => array( 'enabled' => false ),
+	);
+	if ( $classe ) {
+		$attributs['className'] = $classe;
+	}
+	$image = sprintf(
+		'<img src="%1$s" alt="%2$s" class="wp-image-%3$d"%4$s/>',
+		esc_url( $url ),
+		esc_attr( get_post_meta( $id, '_wp_attachment_image_alt', true ) ),
+		(int) $id,
+		$differe ? ' loading="lazy"' : ''
+	);
+	if ( $lien ) {
+		$image = '<a href="' . esc_url( $lien ) . '">' . $image . '</a>';
+	}
+	$figure = '<figure class="' . esc_attr( trim( 'wp-block-image size-' . $taille . ' ' . $classe ) ) . '">' . $image . '</figure>';
+	return get_comment_delimited_block_content( 'core/image', $attributs, $figure ) . "\n";
+}
+
+/**
+ * Photo fixe de l'accueil, retrouvée par l'identifiant d'adresse (slug) du média.
+ *
+ * @param string $nom    Slug du média (ex. « famille-we-souvenir-01 »).
+ * @param string $classe Classe CSS du bloc.
+ * @param string $taille Taille d'image WordPress.
+ * @return string Balisage de blocs, vide si le média n'existe pas.
+ */
+function asso_theme_photo( $nom, $classe, $taille = 'large' ) {
+	$ids = get_posts(
+		array(
+			'post_type'   => 'attachment',
+			'post_status' => 'inherit',
+			'name'        => $nom,
+			'numberposts' => 1,
+			'fields'      => 'ids',
+		)
+	);
+	return $ids ? asso_theme_bloc_image( $ids[0], $classe, $taille ) : '';
+}
+
+/**
+ * Identifiants des images d'un contenu (blocs Image, y compris dans une Galerie).
+ *
+ * @param array $blocs Blocs analysés par parse_blocks().
+ * @return int[]
+ */
+function asso_theme_images_du_contenu( $blocs ) {
+	$ids = array();
+	foreach ( $blocs as $bloc ) {
+		if ( 'core/image' === $bloc['blockName'] && ! empty( $bloc['attrs']['id'] ) ) {
+			$ids[] = (int) $bloc['attrs']['id'];
+		}
+		if ( ! empty( $bloc['innerBlocks'] ) ) {
+			$ids = array_merge( $ids, asso_theme_images_du_contenu( $bloc['innerBlocks'] ) );
+		}
+	}
+	return $ids;
+}
+
+/**
+ * Mosaïque « Souvenirs » de l'accueil : les dernières photos des albums publiés,
+ * chacune renvoyant vers son album.
+ *
+ * @param int $nombre Nombre de photos.
+ * @return string Balisage de blocs, vide s'il n'y a aucune photo.
+ */
+function asso_theme_souvenirs( $nombre = 6 ) {
+	$albums = get_posts(
+		array(
+			'post_type'   => 'asso_album',
+			'numberposts' => 10,
+		)
+	);
+	$html   = '';
+	$total  = 0;
+	foreach ( $albums as $album ) {
+		foreach ( asso_theme_images_du_contenu( parse_blocks( $album->post_content ) ) as $id ) {
+			$html .= asso_theme_bloc_image( $id, '', 'large', get_permalink( $album ), true );
+			if ( ++$total >= $nombre ) {
+				return $html;
+			}
+		}
+	}
+	return $html;
+}

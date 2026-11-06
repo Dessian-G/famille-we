@@ -25,6 +25,11 @@ $asso_section_html = '<div class="wp-block-group alignfull %1$s" style="margin-t
 $asso_carte_blanche = '{"style":{"border":{"radius":"24px"},"spacing":{"padding":{"top":"1.75rem","bottom":"1.75rem","left":"1.75rem","right":"1.75rem"}}},"backgroundColor":"blanc","layout":{"type":"default"}}';
 $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-color has-background" style="border-radius:24px;padding-top:1.75rem;padding-right:1.75rem;padding-bottom:1.75rem;padding-left:1.75rem">';
 
+// Photos de la médiathèque (repères « À FOURNIR » si elles manquent).
+$asso_photo_arche = asso_theme_photo( 'famille-we-souvenir-01', 'asso-collage__arche', 'medium_large' );
+$asso_photo_cadre = asso_theme_photo( 'famille-we-souvenir-07', 'asso-collage__cadre', 'medium_large' );
+$asso_souvenirs   = asso_theme_souvenirs( 6 );
+
 // Gabarits et icônes : balisage de blocs fixe, sans donnée externe.
 // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 ?>
@@ -64,17 +69,25 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <div class="wp-block-group asso-collage__motif asso-motif-pagne"></div>
 <!-- /wp:group -->
 
+<?php if ( $asso_photo_arche ) : ?>
+<?php echo $asso_photo_arche; ?>
+<?php else : ?>
 <!-- wp:group {"className":"asso-collage__arche","backgroundColor":"vert","textColor":"blanc","fontSize":"small","layout":{"type":"default"}} -->
 <div class="wp-block-group asso-collage__arche has-blanc-color has-vert-background-color has-text-color has-background has-small-font-size"><!-- wp:paragraph -->
 <p><?php echo esc_html__( '[À FOURNIR&nbsp;: photo d’une fête de l’association]', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
+<?php endif; ?>
 
+<?php if ( $asso_photo_cadre ) : ?>
+<?php echo $asso_photo_cadre; ?>
+<?php else : ?>
 <!-- wp:group {"className":"asso-collage__cadre","backgroundColor":"blanc","textColor":"encre","fontSize":"small","layout":{"type":"default"}} -->
 <div class="wp-block-group asso-collage__cadre has-encre-color has-blanc-background-color has-text-color has-background has-small-font-size"><!-- wp:paragraph -->
 <p><?php echo esc_html__( '[À FOURNIR&nbsp;: photo des deux sections réunies]', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
+<?php endif; ?>
 
 <!-- wp:html -->
 <div class="asso-collage__tampon"><svg viewBox="0 0 160 160" role="img" aria-label="<?php echo esc_attr__( 'La Famille Wê, Dallas, Oklahoma', 'asso-theme' ); ?>"><defs><path id="asso-cercle" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"></path></defs><circle cx="80" cy="80" r="78" fill="#F77F00"></circle><text fill="#1F2A24" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;letter-spacing:2px"><textPath href="#asso-cercle"><?php echo esc_html__( 'LA FAMILLE WÊ • DALLAS • OKLAHOMA •', 'asso-theme' ); ?></textPath></text><polygon points="80,62 98,80 80,98 62,80" fill="#00754A"></polygon></svg></div>
@@ -323,14 +336,11 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:query {"queryId":4,"query":{"perPage":6,"pages":0,"offset":0,"postType":"asso_album","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"assoAvecCouverture":true}} -->
-<div class="wp-block-query"><!-- wp:post-template {"className":"asso-mosaique asso-cascade","layout":{"type":"default"}} -->
-<!-- wp:post-featured-image {"isLink":true} /-->
-<!-- /wp:post-template -->
-
-<!-- wp:query-no-results -->
 <!-- wp:group {"className":"asso-mosaique asso-cascade","layout":{"type":"default"}} -->
 <div class="wp-block-group asso-mosaique asso-cascade">
+<?php if ( $asso_souvenirs ) : ?>
+<?php echo $asso_souvenirs; ?>
+<?php else : ?>
 <?php for ( $asso_i = 0; $asso_i < 6; $asso_i++ ) : ?>
 <!-- wp:group {"style":{"border":{"radius":"16px"}},"backgroundColor":"blanc","fontSize":"small","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-blanc-background-color has-background has-small-font-size" style="border-radius:16px"><!-- wp:paragraph -->
@@ -338,10 +348,9 @@ $asso_carte_blanche_html = '<div class="wp-block-group has-blanc-background-colo
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 <?php endfor; ?>
+<?php endif; ?>
 </div>
-<!-- /wp:group -->
-<!-- /wp:query-no-results --></div>
-<!-- /wp:query --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group <?php printf( $asso_section, '' ); ?> -->

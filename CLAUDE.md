@@ -169,6 +169,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 - **Liaisons de blocs** : source `asso-core/activite` (`includes/liaisons.php`) avec la clé `cle` : `jour`, `mois`, `date_longue`, `quand`, `lieu`, `section`, `tarif`, `resume`, `lien_url`, `carte_url`, `album_url` (activité) ; `album_resume`, `activite_liee_url`, `activite_liee_titre` (album). Un bouton de classe `asso-si-lien` disparaît si son lien lié est vide.
 - **Thème** : modèles `archive-asso_event`, `single-asso_event`, `archive-asso_album`, `single-asso_album` ; motifs `liste-activites`, `fiche-activite`, `liste-albums`, `fiche-album` ; gabarits PHP `asso_theme_carte_activite()` et `asso_theme_filtre_sections()` dans `functions.php`. Les images s'agrandissent au clic (`theme.json`, visionneuse de `core/image`).
 - **Contenus** : `/activites/` et `/galerie/` sont les listes automatiques ; les anciennes pages provisoires du même nom sont en brouillon. Exemples marqués « À SUPPRIMER » : `scripts/creer-exemples-asso-core.php`.
+- **Photos (02/11/2026)** : 11 photos fournies par Max (dossier `Téléchargements\Mobile Devices`) importées dans la médiathèque sous les noms `famille-we-souvenir-01` à `-11` (WebP, 2000 px max, métadonnées GPS retirées) et réunies dans l'album « Nos moments en famille [À VALIDER] ». Elles restent hors de Git. Sur l'accueil, le collage utilise `famille-we-souvenir-01` (arche) et `-07` (cadre) via `asso_theme_photo()` ; la mosaïque « Souvenirs » montre les 6 dernières photos des albums publiés, chacune liée à son album (`asso_theme_souvenirs()`). Sans photo, les repères `[À FOURNIR]` réapparaissent. Non publiés : `40203.jpg` (enfant identifiable, accord des parents à obtenir), `40268.jpg` (capture du logo) et la vidéo `40213.mp4`.
 
 ---
 
@@ -266,5 +267,5 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 - [ ] Montant de la cotisation et conditions d'adhésion
 - [ ] Statut juridique, adresse postale, statut fiscal des dons (501(c)(3) ou non)
 - [ ] Zelle : e-mail ou numéro destinataire, nom affiché dans Zelle, QR code éventuel
-- [ ] Photos (bandeau d'accueil, albums) et premières activités à annoncer
+- [ ] Photos : 11 reçues le 02/11/2026 (album provisoire). Reste : nom, date et section des activités photographiées, photos des deux sections, accord des parents pour `40203.jpg` ; premières activités à annoncer
 - [ ] Chiffres clés (membres, années d'existence, activités par an)

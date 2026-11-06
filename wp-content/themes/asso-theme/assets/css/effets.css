@@ -243,6 +243,18 @@
 	animation-delay: 1.2s;
 }
 
+/* Photos du collage : l'image remplit sa forme (arche, cadre). */
+.asso-collage .wp-block-image {
+	padding: 0;
+	overflow: hidden;
+}
+
+.asso-collage .wp-block-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .asso-collage__tampon {
 	left: 190px;
 	top: 0;
@@ -538,19 +550,20 @@
 	border-radius: 16px;
 }
 
-/* Mosaïque des albums sur l'accueil : les couvertures remplissent leur case. */
-.asso-mosaique .wp-block-post-featured-image,
-.asso-mosaique .wp-block-post-featured-image a,
-.asso-mosaique .wp-block-post-featured-image img {
+/* Mosaïque des souvenirs sur l'accueil : les photos remplissent leur case. */
+.asso-mosaique .wp-block-image,
+.asso-mosaique .wp-block-image a,
+.asso-mosaique .wp-block-image img {
 	display: block;
 	width: 100%;
 	height: 100%;
 	margin: 0;
 }
 
-.asso-mosaique .wp-block-post-featured-image img {
+.asso-mosaique .wp-block-image img {
 	border-radius: 16px;
 	object-fit: cover;
+	object-position: 50% 30%;
 }
 
 /* ---------- Formulaires (Fluent Forms) aux couleurs du site ---------- */
