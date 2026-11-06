@@ -95,7 +95,7 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
   - `assets/images/logo-famille-we.png` (512 × 512, source de l'icône du site) ;
   - `assets/images/logo-famille-we-256.webp` (affiché dans l'en-tête et le pied de page).
 - En-tête : badge 52 px + logotype texte « La Famille Wê » (Bricolage Grotesque 800, bleu, « Wê » en orange profond), un seul lien vers l'accueil ; badge seul sous 480 px, nom gardé pour les lecteurs d'écran.
-- Pied de page : badge 96 px cerclé de blanc, au-dessus du nom.
+- Pied de page : badge 64 px cerclé de blanc, à côté du nom (pied de page compacté à la demande de Max le 06/11/2026 : liens rapides en ligne, marges réduites).
 - Icône du site : pièce jointe n° 32 de la médiathèque, réglée dans `site_icon`.
 - Une version vectorielle (SVG) ou un PNG haute définition sur fond transparent reste souhaitable `[À FOURNIR]` : la source actuelle est une capture compressée.
 - Orthographe officielle : « La Famille Wê », avec accent circonflexe (confirmée par Max le 29/10/2026).
@@ -186,7 +186,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
   - Le destinataire Zelle est enregistré une seule fois dans une option `asso_zelle` (page de réglages d'asso-core), modifiable dans WP Admin sans toucher au code.
   - Jamais de numéro de compte bancaire ni de numéro de routage sur le site.
   - Le site ne peut pas savoir si un paiement a été reçu : le trésorier vérifie les paiements à la main. Ne jamais afficher « paiement confirmé » ni de statut de cotisation automatique.
-- **Formulaires** (contact, adhésion) : une extension reconnue, à valider avec Max (ex. Fluent Forms ou WPForms Lite). Case de consentement, anti-spam (champ piège), aucune donnée sensible demandée.
+- **Formulaires** (contact, adhésion) : une extension reconnue, à valider avec Max (ex. Fluent Forms ou WPForms Lite). Case de consentement, anti-spam (champ piège), aucune donnée sensible demandée. Aucune adresse IP enregistrée avec les envois (filtre dans `asso-core/includes/formulaires.php`, décision de Max du 06/11/2026) ; la page Confidentialité l'annonce.
 - Ne jamais écrire qu'un don est « déductible des impôts » ni mentionner un statut 501(c)(3) sans confirmation de Max.
 - **Secrets** : aucune clé, aucun mot de passe, aucun jeton dans le code, dans ce fichier ou dans Git. Ils vont dans les réglages de l'extension concernée ou dans `wp-config.php`, hors Git.
 - **Droit à l'image** : publier uniquement les photos fournies et validées par Max ; pas de photo d'enfant identifiable sans l'accord des parents ; jamais de nom d'enfant.

@@ -28,6 +28,7 @@ require_once ASSO_CORE_DOSSIER . 'includes/liaisons.php';
 require_once ASSO_CORE_DOSSIER . 'includes/editeur.php';
 require_once ASSO_CORE_DOSSIER . 'includes/referencement.php';
 require_once ASSO_CORE_DOSSIER . 'includes/zelle.php';
+require_once ASSO_CORE_DOSSIER . 'includes/formulaires.php';
 
 /**
  * Charge les traductions de l'extension (dossier languages/), pour une future version anglaise.
