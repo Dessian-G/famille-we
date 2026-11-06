@@ -269,3 +269,31 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 - [ ] Zelle : e-mail ou numéro destinataire, nom affiché dans Zelle, QR code éventuel
 - [ ] Photos : 11 reçues le 02/11/2026 (album provisoire). Reste : nom, date et section des activités photographiées, photos des deux sections, accord des parents pour `40203.jpg` ; premières activités à annoncer
 - [ ] Chiffres clés (membres, années d'existence, activités par an)
+- [ ] Pages légales : responsable de la publication, personne référente pour les données, durée de conservation des données
+- [ ] FAQ : comment le membre apprend que son paiement est reçu ; faut-il être membre pour participer aux activités
+
+---
+
+## 13. Mise en ligne : liste de contrôle
+
+Recette du 06/11/2026 (24 adresses, 375, 768 et 1280 px, axe-core 4.10, test clavier) : aucun défilement horizontal, un seul H1 par page, aucune erreur JavaScript, aucun appel à un site extérieur, focus toujours visible, plus aucun défaut axe. jQuery n'est chargé que sur Adhésion et Contact (exigé par Fluent Forms). Accueil : environ 1,1 Mo (photos), autres pages 250 à 490 Ko.
+
+Réglages déjà faits : dates en français (`j F Y`, `G \h i`), commentaires fermés, catégorie par défaut « Vie de l'association », adresses `/%postname%/`, fuseau America/Chicago, `WP_DEBUG` désactivé.
+
+**Max, dans WP Admin**
+- [ ] Réglages > Général : titre « La Famille Wê de Dallas & Oklahoma » et adresse e-mail d'administration réelle (actuellement `admin@localhost.com`)
+- [ ] Réglages > Zelle : destinataire et nom du titulaire
+- [ ] Remplacer les repères `[À FOURNIR]` et relire les `[À VALIDER]` (pages, extraits, motifs `accueil`, `bureau`, `zelle`)
+- [ ] Fluent Forms > Entries : supprimer les envois d'essai
+
+**Avant l'envoi (Claude, avec l'accord de Max)**
+- [ ] Supprimer les 6 contenus d'exemple « À SUPPRIMER » (`scripts/creer-exemples-asso-core.php`), les formulaires de démonstration Fluent Forms et vider la corbeille
+- [ ] Mettre à jour Fluent Forms (une mise à jour est disponible le 06/11/2026)
+- [ ] Choisir l'hébergeur et le nom de domaine (au nom de l'association)
+
+**Après l'envoi**
+- [ ] HTTPS actif, toutes les adresses en `https://`
+- [ ] Envoi d'e-mails par SMTP (ex. WP Mail SMTP) et test réel des deux formulaires
+- [ ] Mot de passe administrateur fort, un compte par personne, sauvegardes automatiques
+- [ ] Relancer la recette sur l'adresse en ligne ; déclarer le site dans Google Search Console
+- [ ] Vérifier que l'hébergeur n'ajoute ni cookie ni statistiques non annoncés dans la page Confidentialité
