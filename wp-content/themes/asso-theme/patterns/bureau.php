@@ -27,8 +27,8 @@ $asso_fonctions = array(
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( '[À FOURNIR&nbsp;: prénom et nom]', 'asso-theme' ); ?></h3>
+<!-- wp:heading {"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( '[À FOURNIR&nbsp;: prénom et nom]', 'asso-theme' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

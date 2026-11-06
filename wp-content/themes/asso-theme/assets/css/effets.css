@@ -600,8 +600,9 @@
 
 .asso-formulaire .fluentform input[type="radio"],
 .asso-formulaire .fluentform input[type="checkbox"] {
-	width: 1.15rem;
-	height: 1.15rem;
+	/* 24 px : taille minimale d'une cible tactile (WCAG 2.5.8). */
+	width: 1.5rem;
+	height: 1.5rem;
 	accent-color: var(--wp--preset--color--bleu);
 }
 
@@ -755,4 +756,19 @@
 	.asso-pause-animations {
 		display: none;
 	}
+}
+
+/* ---------- Cibles tactiles d'au moins 24 px (WCAG 2.5.8) ---------- */
+
+/* Bouton « Agrandir » des photos (visionneuse de WordPress), 20 px par défaut. */
+.wp-lightbox-container button {
+	width: 32px;
+	height: 32px;
+}
+
+/* Liens de titres (cartes, article précédent ou suivant) : un peu plus hauts. */
+.wp-block-post-title a,
+.wp-block-post-navigation-link a {
+	display: inline-block;
+	padding-block: 0.15em;
 }
