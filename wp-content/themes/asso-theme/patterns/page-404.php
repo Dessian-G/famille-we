@@ -10,9 +10,11 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<!-- wp:heading {"level":1} -->
+<!-- wp:group {"className":"asso-entete-page","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|30"},"margin":{"bottom":"var:preset|spacing|30"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group asso-entete-page" style="margin-bottom:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading"><?php echo esc_html__( 'Page introuvable', 'asso-theme' ); ?></h1>
-<!-- /wp:heading -->
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( 'Oups, cette page n’existe pas ou a été déplacée. Pas d’inquiétude, la famille est juste à côté&nbsp;! [À VALIDER]', 'asso-theme' ); ?></p>

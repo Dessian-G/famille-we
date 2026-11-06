@@ -225,7 +225,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 - **Mobile d'abord** : vérifier à 375 px, 768 px et 1280 px. Zones tactiles d'au moins 44 px. Aucun défilement horizontal.
 - **Accessibilité WCAG AA** : contrastes de la section 4, texte alternatif sur chaque image informative, focus visible, navigation au clavier, lien « Aller au contenu », un seul H1 par page, hiérarchie des titres respectée, `lang="fr-FR"`.
 - **Performance** : images en WebP, 2000 px de large au maximum, chargement différé natif, pas de carrousel lourd, pas de jQuery côté visiteur, uniquement les graisses de police listées.
-- **Référencement** : un titre et une méta-description par page ; extension SEO éventuelle à valider avec Max.
+- **Référencement** : un titre et une méta-description par page ; extension SEO éventuelle à valider avec Max. La méta-description vient du champ « Extrait » de chaque page (`asso-core/includes/referencement.php`, désactivé si Yoast, Rank Math ou SEOPress est actif) ; textes provisoires posés par `scripts/ajouter-descriptions.php`, qui ne remplace jamais un extrait déjà rempli.
 
 ---
 
