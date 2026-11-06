@@ -71,15 +71,13 @@
 }
 
 .asso-pied .asso-logotype a {
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 1rem;
+	gap: 0.75rem;
 }
 
 /* Anneau blanc : la bande verte du badge se fondrait dans le pied de page vert. */
 .asso-pied .asso-logotype .asso-logo {
-	width: 96px;
-	height: 96px;
+	width: 64px;
+	height: 64px;
 	border-radius: 50%;
 	box-shadow: 0 0 0 4px var(--wp--preset--color--blanc);
 }
