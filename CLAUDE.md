@@ -7,7 +7,7 @@ Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max e
 ## 1. L'association
 
 - **Nom complet** : La Famille Wê de Dallas & Oklahoma (nom court : La Famille Wê)
-- **Slogan** : Ensemble Allons Plus Loin
+- **Slogan** : Ensemble Allons Plus Loin. En grand dans le bandeau de l'accueil, version parlée « Ensemble on va plus loin » (choix de Max du 07/11/2026) ; partout ailleurs (pied de page…), la forme officielle.
 - **Qui sommes-nous** : association de la diaspora ivoirienne, avec deux sections, Dallas (Texas) et Oklahoma. Association laïque.
 - **Public** : membres et leurs familles, diaspora ivoirienne du Texas et de l'Oklahoma, sympathisants, partenaires.
 - **Objectifs du site** :
@@ -216,6 +216,8 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 - **Thème bloc `asso-theme` uniquement** (`wp-content/themes/asso-theme/`) :
   - Tout le style dans `theme.json` (couleurs, polices, tailles, espacements) ; CSS supplémentaire minimal.
   - Le design vit dans les fichiers du thème (`templates/`, `parts/`, `patterns/`), pas seulement dans l'éditeur. Si Max modifie un modèle dans l'éditeur du site, reporter la modification dans les fichiers.
+  - La page Accueil ne contient que l'appel au motif `asso-theme/accueil` (`scripts/pages/accueil.html`). La modifier dans l'éditeur la fige en copie (le 06/11/2026 : souvenirs plus automatiques, changements du thème ignorés) : reporter le changement dans `patterns/accueil.php`, puis remettre l'appel au motif.
+  - Tout script qui enregistre un contenu (`wp_insert_post`, `wp_update_post`) commence par `wp_set_current_user()` avec un administrateur, sinon WordPress filtre le balisage des blocs.
   - Après l'ajout d'un **nouveau fichier** dans `patterns/`, augmenter `Version` dans `style.css` : WordPress met en cache la liste des motifs du thème tant que la version ne change pas (avec une entrée de cache différente pour le serveur web et pour WP-CLI). Modifier un motif existant ne demande rien. Augmenter aussi la version après un changement de `assets/css` ou `assets/js`, pour que les navigateurs rechargent les fichiers.
 - **Extension métier `asso-core`** (`wp-content/plugins/asso-core/`) : types de contenu, taxonomies, métadonnées, blocs dynamiques. Rien de tout cela dans le thème.
 - **Nommage** : préfixe `asso_` pour fonctions, options, hooks et métadonnées ; domaines de traduction `asso-theme` et `asso-core`.

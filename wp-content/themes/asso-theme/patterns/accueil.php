@@ -41,7 +41,7 @@ $asso_souvenirs   = asso_theme_souvenirs( 6 );
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"asso-titre-revele","style":{"typography":{"fontWeight":"800","letterSpacing":"-0.04em","lineHeight":"0.92"}},"textColor":"encre","fontFamily":"bricolage","fontSize":"xxx-large"} -->
-<p class="asso-titre-revele has-encre-color has-text-color has-bricolage-font-family has-xxx-large-font-size" style="font-weight:800;letter-spacing:-0.04em;line-height:0.92"><?php echo esc_html__( 'Ensemble', 'asso-theme' ); ?><br><?php echo esc_html__( 'allons', 'asso-theme' ); ?><br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vert-color"><?php echo esc_html__( 'plus loin', 'asso-theme' ); ?></mark><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-orange-profond-color">.</mark></p>
+<p class="asso-titre-revele has-encre-color has-text-color has-bricolage-font-family has-xxx-large-font-size" style="font-weight:800;letter-spacing:-0.04em;line-height:0.92"><?php echo esc_html__( 'Ensemble', 'asso-theme' ); ?><br><?php echo esc_html__( 'on va', 'asso-theme' ); ?><br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vert-color"><?php echo esc_html__( 'plus loin', 'asso-theme' ); ?></mark><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-orange-profond-color">.</mark></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"asso-separateur","style":{"spacing":{"padding":{"top":"1.4rem"},"blockGap":"1.4rem"}},"layout":{"type":"default"}} -->

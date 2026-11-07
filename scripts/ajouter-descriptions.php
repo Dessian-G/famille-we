@@ -14,6 +14,19 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Administrateur courant : sans lui, WordPress filtre le balisage des blocs en enregistrant.
+$asso_admins = get_users(
+	array(
+		'role'   => 'administrator',
+		'number' => 1,
+		'fields' => 'ID',
+	)
+);
+if ( ! $asso_admins ) {
+	WP_CLI::error( 'Aucun administrateur trouvé.' );
+}
+wp_set_current_user( (int) $asso_admins[0] );
+
 $asso_nbsp = "\u{00A0}";
 
 // Adresse de la page => description (160 caractères au plus, mention comprise).
