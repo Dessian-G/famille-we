@@ -818,3 +818,12 @@
 	display: inline-block;
 	padding-block: 0.15em;
 }
+
+/* Icônes des réseaux sociaux du pied de page : zone tactile de 44 px (icône de 36 px). */
+.asso-pied .wp-block-social-links.asso-reseaux .wp-social-link a {
+	padding: 4px;
+}
+
+.asso-pied .wp-block-social-links.asso-reseaux {
+	gap: 0.25rem;
+}

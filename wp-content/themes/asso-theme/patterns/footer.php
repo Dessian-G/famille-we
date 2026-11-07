@@ -42,6 +42,16 @@ $asso_menu = wp_json_encode(
 	)
 );
 
+/*
+ * Icônes des réseaux sociaux : seulement celles dont l'adresse est saisie
+ * dans Réglages > Réseaux sociaux (extension asso-core). Jamais de lien mort.
+ */
+$asso_reseaux = function_exists( 'asso_core_reseaux' ) ? array_filter( asso_core_reseaux() ) : array();
+$asso_libelles_reseaux = array(
+	'facebook'  => __( 'Page Facebook de La Famille Wê', 'asso-theme' ),
+	'instagram' => __( 'Compte Instagram de La Famille Wê', 'asso-theme' ),
+);
+
 // Les sorties JSON ci-dessous sont des attributs de blocs produits par wp_json_encode().
 // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 ?>
@@ -82,13 +92,23 @@ $asso_menu = wp_json_encode(
 
 <!-- wp:paragraph -->
 <p><a href="<?php echo esc_url( 'mailto:' . antispambot( $asso_courriel ) ); ?>"><?php echo esc_html( antispambot( $asso_courriel ) ); ?></a></p>
-<!-- /wp:paragraph --></div>
+<!-- /wp:paragraph -->
+<?php if ( $asso_reseaux ) : ?>
+
+<!-- wp:social-links {"iconColor":"blanc","iconColorValue":"#FFFFFF","size":"has-large-icon-size","className":"is-style-logos-only asso-reseaux","style":{"spacing":{"blockGap":{"left":"0.5rem"}}}} -->
+<ul class="wp-block-social-links has-large-icon-size has-icon-color is-style-logos-only asso-reseaux">
+<?php foreach ( $asso_reseaux as $asso_service => $asso_url ) : ?>
+<!-- wp:social-link <?php echo wp_json_encode( array( 'url' => $asso_url, 'service' => $asso_service, 'label' => $asso_libelles_reseaux[ $asso_service ] ) ); ?> /-->
+<?php endforeach; ?>
+</ul>
+<!-- /wp:social-links -->
+<?php endif; ?></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"},"padding":{"top":"var:preset|spacing|20"}},"border":{"top":{"color":"#ffffff59","style":"solid","width":"1px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"fontSize":"small"} -->
 <div class="wp-block-group alignwide has-small-font-size" style="border-top-color:#ffffff59;border-top-style:solid;border-top-width:1px;margin-top:var(--wp--preset--spacing--30);padding-top:var(--wp--preset--spacing--20)"><!-- wp:paragraph -->
-<p>© <?php echo esc_html( wp_date( 'Y' ) ); ?> La Famille Wê</p>
+<p>© <?php echo esc_html( wp_date( 'Y' ) ); ?> La Famille Wê. <?php echo esc_html__( 'Tous droits réservés.', 'asso-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

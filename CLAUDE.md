@@ -36,8 +36,8 @@ Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max e
 | Élément | Valeur |
 |---|---|
 | E-mail de contact | famillewededallas@gmail.com |
-| Facebook | Pas encore de page (à créer) : ne rien afficher ni annoncer d'ici là |
-| Instagram, WhatsApp, TikTok, YouTube | Aucun pour l'instant : ne pas afficher d'icône |
+| Facebook, Instagram | Icônes dans le pied de page (demande de Max du 07/11/2026), affichées seulement quand leur adresse est saisie dans WP Admin > Réglages > Réseaux sociaux (option `asso_reseaux`, `asso-core/includes/reseaux.php`). Adresses `[À FOURNIR]` : ne jamais en inventer. |
+| WhatsApp, TikTok, YouTube | Aucun pour l'instant : ne pas afficher d'icône |
 
 - Afficher l'e-mail avec `antispambot()`, jamais en clair dans le HTML.
 - Chaque icône de réseau a un libellé accessible (ex. « Page Facebook de La Famille Wê »).
@@ -114,8 +114,8 @@ Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésio
 
 ### Pied de page
 
-Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail ; Facebook quand la page existera).
-Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité.
+Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail, puis icônes Facebook et Instagram quand leur adresse est saisie).
+Ligne du bas : « © année La Famille Wê. Tous droits réservés. » · Mentions légales · Confidentialité.
 
 ### Pages
 
@@ -263,7 +263,7 @@ Ligne du bas : © année La Famille Wê · Mentions légales · Confidentialité
 ## 12. Informations à fournir par Max
 
 - [ ] Logo (SVG ou PNG ≥ 512 px) et son chemin sur le PC
-- [ ] Page Facebook : pas encore créée ; fournir son nom exact et son URL une fois en ligne
+- [ ] Pages Facebook et Instagram : adresses à saisir dans Réglages > Réseaux sociaux une fois les pages créées
 - [ ] Histoire de l'association (année de création, fondateurs), mission, valeurs
 - [ ] Membres du bureau : noms, rôles, section, photos (avec leur accord)
 - [ ] Sections : responsables, villes, lieux et rythme des réunions
