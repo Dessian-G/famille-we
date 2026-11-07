@@ -51,6 +51,20 @@ function asso_theme_effets() {
 add_action( 'wp_enqueue_scripts', 'asso_theme_effets' );
 
 /**
+ * Page Merci : classe « asso-fete », qui déclenche les confettis d'effets.js.
+ *
+ * @param string[] $classes Classes de la balise body.
+ * @return string[]
+ */
+function asso_theme_classe_fete( $classes ) {
+	if ( is_page( 'merci' ) ) {
+		$classes[] = 'asso-fete';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'asso_theme_classe_fete' );
+
+/**
  * Applique les mêmes effets dans l'éditeur, pour un rendu fidèle.
  */
 function asso_theme_styles_editeur() {

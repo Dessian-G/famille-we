@@ -1,6 +1,7 @@
 /**
  * Effets du thème asso-theme : titre révélé ligne par ligne, apparitions au
- * défilement, compteurs, bande défilante avec bouton pause, ombre de l'en-tête.
+ * défilement, titres au pinceau, compteurs, bande défilante avec bouton pause,
+ * confettis de la page Merci, ombre de l’en-tête.
  * Aucune dépendance. Sans JavaScript, tout le contenu reste affiché normalement.
  */
 ( function () {
@@ -116,7 +117,7 @@
 	}
 
 	/* Apparitions au défilement. */
-	var aRevele = document.querySelectorAll( '.asso-revele, .asso-cascade' );
+	var aRevele = document.querySelectorAll( '.asso-revele, .asso-cascade, .asso-pinceau' );
 	function montrer( element ) {
 		element.classList.add( 'est-visible' );
 		element.querySelectorAll( '.asso-compteur' ).forEach( animerCompteur );
@@ -168,6 +169,83 @@
 			} );
 			bande.appendChild( bouton );
 		} );
+	}
+
+	/*
+	 * Confettis orange, blanc, vert sur la page Merci (classe « asso-fete ») :
+	 * une seule pluie d'environ 2,5 secondes, purement décorative.
+	 */
+	function confettis() {
+		var toile = document.createElement( 'canvas' );
+		var ctx = toile.getContext && toile.getContext( '2d' );
+		if ( ! ctx ) {
+			return;
+		}
+		var echelle = window.devicePixelRatio || 1;
+		var largeur = window.innerWidth;
+		var hauteur = window.innerHeight;
+		toile.className = 'asso-confettis';
+		toile.setAttribute( 'aria-hidden', 'true' );
+		toile.width = largeur * echelle;
+		toile.height = hauteur * echelle;
+		ctx.scale( echelle, echelle );
+		document.body.appendChild( toile );
+
+		var couleurs = [ '#F77F00', '#FFFFFF', '#00754A' ];
+		var nombre = Math.min( 180, Math.round( largeur / 7 ) );
+		var morceaux = [];
+		for ( var i = 0; i < nombre; i++ ) {
+			morceaux.push( {
+				x: Math.random() * largeur,
+				y: -20 - Math.random() * hauteur * 0.4,
+				vx: ( Math.random() - 0.5 ) * 2.4,
+				vy: 2 + Math.random() * 3.5,
+				l: 6 + Math.random() * 6,
+				h: 4 + Math.random() * 4,
+				angle: Math.random() * Math.PI,
+				va: ( Math.random() - 0.5 ) * 0.3,
+				couleur: couleurs[ i % couleurs.length ]
+			} );
+		}
+
+		var debut = null;
+		var duree = 2600;
+		function image( instant ) {
+			if ( debut === null ) {
+				debut = instant;
+			}
+			var ecoule = instant - debut;
+			ctx.clearRect( 0, 0, largeur, hauteur );
+			ctx.globalAlpha = ecoule > duree - 700 ? Math.max( 0, ( duree - ecoule ) / 700 ) : 1;
+			morceaux.forEach( function ( m ) {
+				m.vy += 0.06;
+				m.vx *= 0.99;
+				m.x += m.vx + Math.sin( ( ecoule / 300 ) + m.l ) * 0.6;
+				m.y += m.vy;
+				m.angle += m.va;
+				ctx.save();
+				ctx.translate( m.x, m.y );
+				ctx.rotate( m.angle );
+				ctx.fillStyle = m.couleur;
+				ctx.fillRect( -m.l / 2, -m.h / 2, m.l, m.h );
+				if ( m.couleur === '#FFFFFF' ) {
+					// Liseré discret : le blanc reste visible sur le fond bleu ciel.
+					ctx.strokeStyle = 'rgba(31, 42, 36, 0.25)';
+					ctx.lineWidth = 1;
+					ctx.strokeRect( -m.l / 2, -m.h / 2, m.l, m.h );
+				}
+				ctx.restore();
+			} );
+			if ( ecoule < duree ) {
+				window.requestAnimationFrame( image );
+			} else {
+				toile.remove();
+			}
+		}
+		window.requestAnimationFrame( image );
+	}
+	if ( ! mouvementReduit && document.body.classList.contains( 'asso-fete' ) ) {
+		window.setTimeout( confettis, 300 );
 	}
 
 	/* Ombre sous l'en-tête dès que la page défile. */

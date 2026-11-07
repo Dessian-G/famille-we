@@ -86,6 +86,7 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
 ### Animations
 
 - Effets dans `assets/css/effets.css` et `assets/js/effets.js` (sans bibliothèque) : titre révélé ligne par ligne, apparitions au défilement, compteurs, bande défilante, collage flottant, tampon rotatif.
+- Ambiance « chaleureuse et festive » (choix de Max du 07/11/2026) : titres de section de l'accueil soulignés d'un coup de pinceau orange qui se dessine à l'apparition (classe `asso-pinceau`) ; pluie de confettis orange, blanc, vert d'environ 2,5 s sur la page Merci (classe `asso-fete` ajoutée au body par `functions.php`).
 - Toute animation qui dure plus de 5 secondes doit pouvoir être mise en pause (bouton « Pause » de la bande défilante, WCAG 2.2.2).
 - Réglage « réduire les animations » de l'appareil : aucune animation, état final affiché directement.
 
