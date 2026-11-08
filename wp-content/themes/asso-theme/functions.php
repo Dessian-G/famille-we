@@ -65,6 +65,47 @@ function asso_theme_classe_fete( $classes ) {
 add_filter( 'body_class', 'asso_theme_classe_fete' );
 
 /**
+ * Écrans de WordPress « Mot de passe oublié » et « Nouveau mot de passe » (wp-login.php),
+ * utilisés par les membres : logo, couleurs et polices du site.
+ */
+function asso_theme_ecran_connexion() {
+	$logo = get_theme_file_uri( 'assets/images/logo-famille-we-256.webp' );
+	$css  = 'body.login{background:#E3EEF9;font-family:Figtree,system-ui,sans-serif;color:#1F2A24}'
+		. '.login h1 a{background-image:url(' . esc_url( $logo ) . ');background-size:96px 96px;width:96px;height:96px}'
+		. '.login form{border:1px solid #F6D2B0;border-radius:24px;box-shadow:none}'
+		. '.login input[type=text],.login input[type=password],.login input[type=email]{border:1px solid #7b857f;border-radius:12px;min-height:44px}'
+		. '.login .button-primary{background:#F77F00;border-color:#F77F00;color:#1F2A24;border-radius:999px;min-height:44px;padding:0 1.25rem;font-weight:600}'
+		. '.login .button-primary:hover,.login .button-primary:focus{background:#A64E00;border-color:#A64E00;color:#fff}'
+		. '.login #nav a,.login #backtoblog a{color:#1F5AA6}'
+		. '.login .message,.login .notice{border-left-color:#00754A;border-radius:8px}';
+	wp_add_inline_style( 'login', $css );
+}
+add_action( 'login_enqueue_scripts', 'asso_theme_ecran_connexion' );
+
+/**
+ * Le logo de l'écran de connexion renvoie vers le site, avec son nom.
+ *
+ * @return string
+ */
+function asso_theme_lien_logo_connexion() {
+	return home_url( '/' );
+}
+add_filter( 'login_headerurl', 'asso_theme_lien_logo_connexion' );
+
+/**
+ * Texte du lien du logo de l'écran de connexion.
+ *
+ * @return string
+ */
+function asso_theme_texte_logo_connexion() {
+	return __( 'La Famille Wê de Dallas & Oklahoma', 'asso-theme' );
+}
+add_filter( 'login_headertext', 'asso_theme_texte_logo_connexion' );
+
+// Site en français uniquement : pas de choix de langue sur l'écran de connexion.
+add_filter( 'login_display_language_dropdown', '__return_false' );
+
+/**
  * Applique les mêmes effets dans l'éditeur, pour un rendu fidèle.
  */
 function asso_theme_styles_editeur() {

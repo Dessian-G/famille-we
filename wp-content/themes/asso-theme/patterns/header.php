@@ -85,6 +85,8 @@ $asso_sous_menu = wp_json_encode(
 <!-- wp:navigation-link <?php echo $asso_lien( __( 'Adhésion', 'asso-theme' ), '/adhesion/' ); ?> /-->
 
 <!-- wp:navigation-link <?php echo $asso_lien( __( 'Contact', 'asso-theme' ), '/contact/' ); ?> /-->
+
+<!-- wp:navigation-link <?php echo $asso_lien( __( 'Espace membres', 'asso-theme' ), '/espace-membres/' ); ?> /-->
 <!-- /wp:navigation -->
 
 <!-- wp:buttons {"className":"asso-entete-don"} -->

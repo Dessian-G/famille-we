@@ -854,3 +854,262 @@
 	opacity: 0.6;
 	cursor: default;
 }
+
+/* ---------- Espace membres (formulaires et pages de l'extension asso-core) ---------- */
+
+.asso-connexion {
+	max-width: 34rem;
+	padding: 1.75rem;
+	border: 1px solid #f6d2b0;
+	border-radius: 24px;
+	background: var(--wp--preset--color--blanc);
+}
+
+.asso-connexion fieldset {
+	margin: 0 0 1.5rem;
+	padding: 0;
+	border: 0;
+}
+
+.asso-connexion legend {
+	margin-bottom: 0.75rem;
+	font-family: var(--wp--preset--font-family--bricolage);
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 700;
+	color: var(--wp--preset--color--bleu);
+}
+
+.asso-connexion .asso-choix legend {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 600;
+	color: var(--wp--preset--color--encre);
+}
+
+.asso-champ {
+	margin: 0 0 1rem;
+}
+
+.asso-champ label {
+	display: block;
+	margin-bottom: 0.35rem;
+	font-weight: 600;
+}
+
+.asso-champ input {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 48px;
+	padding: 0.75rem 1rem;
+	border: 1px solid #7b857f;
+	border-radius: 12px;
+	background: var(--wp--preset--color--blanc);
+	color: var(--wp--preset--color--encre);
+	font: inherit;
+}
+
+.asso-champ input:focus {
+	border-color: var(--wp--preset--color--bleu);
+	outline: 3px solid rgb(31 90 166 / 0.35);
+	outline-offset: 1px;
+}
+
+.asso-case {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin: 0 0 0.75rem;
+}
+
+.asso-case input {
+	flex-shrink: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0;
+	accent-color: var(--wp--preset--color--bleu);
+}
+
+.asso-aide,
+.asso-espace__mention,
+.asso-documents__infos {
+	font-size: var(--wp--preset--font-size--small);
+	color: #4a544e;
+}
+
+.asso-connexion__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 1.5rem;
+	margin: 1.5rem 0 0;
+}
+
+.asso-connexion__actions .wp-element-button {
+	min-height: 48px;
+	border: 0;
+	cursor: pointer;
+}
+
+.asso-connexion__message {
+	margin: 0 0 1.25rem;
+	padding: 0.85rem 1rem;
+	border-left: 4px solid;
+	border-radius: 8px;
+}
+
+.asso-connexion__message--erreur {
+	border-color: #b3261e;
+	background: #fdecea;
+	color: #5c1410;
+}
+
+.asso-connexion__message--info,
+.asso-connexion__message--succes,
+.asso-message--info {
+	border-color: var(--wp--preset--color--vert);
+	background: #e6f2ec;
+	color: var(--wp--preset--color--encre);
+}
+
+.asso-message--info {
+	padding: 0.85rem 1rem;
+	border-left: 4px solid var(--wp--preset--color--vert);
+	border-radius: 8px;
+}
+
+.asso-espace__bonjour {
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 600;
+}
+
+.asso-espace__liens ul,
+.asso-documents,
+.asso-annuaire__liste {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.asso-espace__liens ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 1rem 0 2rem;
+}
+
+.asso-espace__liens a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0 1.1rem;
+	border: 1px solid var(--wp--preset--color--encre);
+	border-radius: 999px;
+	color: var(--wp--preset--color--encre);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.asso-espace__liens a:hover {
+	background: var(--wp--preset--color--blanc);
+}
+
+.asso-espace__bloc {
+	margin: 0 0 1.5rem;
+	padding: 1.5rem 1.75rem;
+	border: 1px solid #f6d2b0;
+	border-radius: 24px;
+	background: var(--wp--preset--color--blanc);
+}
+
+.asso-espace__bloc h2 {
+	margin-top: 0;
+}
+
+.asso-espace__cotisation {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.asso-annonce + .asso-annonce {
+	margin-top: 1.25rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid rgb(31 42 36 / 0.15);
+}
+
+.asso-annonce h3 {
+	margin: 0;
+}
+
+.asso-annonce__date {
+	margin: 0.25rem 0 0.5rem;
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--orange-profond);
+}
+
+.asso-documents li {
+	padding: 0.6rem 0;
+	border-bottom: 1px solid rgb(31 42 36 / 0.12);
+}
+
+.asso-documents a {
+	display: inline-block;
+	padding-block: 0.2em;
+	font-weight: 600;
+}
+
+.asso-annuaire__liste {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.asso-annuaire__membre {
+	padding: 1.25rem 1.5rem;
+	border: 1px solid #f6d2b0;
+	border-radius: 24px;
+	background: var(--wp--preset--color--blanc);
+}
+
+.asso-annuaire__membre p {
+	margin: 0 0 0.35rem;
+	overflow-wrap: anywhere;
+}
+
+.asso-annuaire__nom {
+	font-family: var(--wp--preset--font-family--bricolage);
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 700;
+	color: var(--wp--preset--color--bleu);
+}
+
+.asso-annuaire__section {
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--orange-profond);
+}
+
+/* Filtre par section de l'annuaire : pilules comme le filtre des activités. */
+.asso-annuaire .asso-filtre-sections ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.asso-annuaire .asso-filtre-sections a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0 1.1rem;
+	border: 1px solid var(--wp--preset--color--encre);
+	border-radius: 999px;
+	color: var(--wp--preset--color--encre);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.asso-annuaire .asso-filtre-sections a[aria-current="true"] {
+	background: var(--wp--preset--color--encre);
+	color: var(--wp--preset--color--blanc);
+}

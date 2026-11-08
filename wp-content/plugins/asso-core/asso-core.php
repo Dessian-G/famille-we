@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Asso Core
- * Description: Contenus de La Famille Wê de Dallas & Oklahoma : activités, albums photo et sections.
+ * Description: Contenus de La Famille Wê de Dallas & Oklahoma : activités, albums photo, sections et espace membres.
  * Version: 0.1.0
  * Requires at least: 6.8
  * Requires PHP: 7.4
@@ -30,6 +30,10 @@ require_once ASSO_CORE_DOSSIER . 'includes/referencement.php';
 require_once ASSO_CORE_DOSSIER . 'includes/zelle.php';
 require_once ASSO_CORE_DOSSIER . 'includes/formulaires.php';
 require_once ASSO_CORE_DOSSIER . 'includes/reseaux.php';
+require_once ASSO_CORE_DOSSIER . 'includes/membres.php';
+require_once ASSO_CORE_DOSSIER . 'includes/membres-contenus.php';
+require_once ASSO_CORE_DOSSIER . 'includes/membres-cotisations.php';
+require_once ASSO_CORE_DOSSIER . 'includes/membres-espace.php';
 
 /**
  * Charge les traductions de l'extension (dossier languages/), pour une future version anglaise.
