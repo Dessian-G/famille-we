@@ -36,7 +36,7 @@ Ce fichier guide Claude Code sur ce projet. Le relire avant chaque tâche. Max e
 | Élément | Valeur |
 |---|---|
 | E-mail de contact | famillewededallas@gmail.com |
-| Facebook, Instagram | Icônes dans le pied de page (demande de Max du 07/11/2026), affichées seulement quand leur adresse est saisie dans WP Admin > Réglages > Réseaux sociaux (option `asso_reseaux`, `asso-core/includes/reseaux.php`). Adresses `[À FOURNIR]` : ne jamais en inventer. |
+| Facebook, Instagram | Icônes toujours présentes dans le pied de page (place réservée, demande de Max du 07/11/2026) : pâles et non cliquables (« bientôt disponible » pour les lecteurs d'écran) tant que leur adresse n'est pas saisie dans WP Admin > Réglages > Réseaux sociaux, vrais liens ensuite (option `asso_reseaux`, `asso-core/includes/reseaux.php`). Adresses `[À FOURNIR]` : ne jamais en inventer. |
 | WhatsApp, TikTok, YouTube | Aucun pour l'instant : ne pas afficher d'icône |
 
 - Afficher l'e-mail avec `antispambot()`, jamais en clair dans le HTML.
@@ -114,7 +114,7 @@ Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésio
 
 ### Pied de page
 
-Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail, puis icônes Facebook et Instagram quand leur adresse est saisie).
+Fond vert `#00754A`, texte blanc, 3 colonnes : logo + slogan · liens rapides · contact (e-mail, puis icônes Facebook et Instagram, actives quand leur adresse est saisie).
 Ligne du bas : « © année La Famille Wê. Tous droits réservés. » · Mentions légales · Confidentialité.
 
 ### Pages

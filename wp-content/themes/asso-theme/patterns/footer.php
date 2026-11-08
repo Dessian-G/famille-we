@@ -43,14 +43,35 @@ $asso_menu = wp_json_encode(
 );
 
 /*
- * Icônes des réseaux sociaux : seulement celles dont l'adresse est saisie
- * dans Réglages > Réseaux sociaux (extension asso-core). Jamais de lien mort.
+ * Icônes des réseaux sociaux, toujours affichées (place réservée, demande de Max du 07/11/2026).
+ * Adresse saisie dans Réglages > Réseaux sociaux (asso-core) : vrai lien.
+ * Pas encore d'adresse : icône pâle, non cliquable, annoncée « bientôt disponible ». Jamais de lien mort.
  */
-$asso_reseaux = function_exists( 'asso_core_reseaux' ) ? array_filter( asso_core_reseaux() ) : array();
+$asso_adresses_reseaux = function_exists( 'asso_core_reseaux' ) ? asso_core_reseaux() : array();
 $asso_libelles_reseaux = array(
 	'facebook'  => __( 'Page Facebook de La Famille Wê', 'asso-theme' ),
 	'instagram' => __( 'Compte Instagram de La Famille Wê', 'asso-theme' ),
 );
+$asso_icones_reseaux = '';
+foreach ( $asso_libelles_reseaux as $asso_service => $asso_libelle ) {
+	$asso_icone = function_exists( 'block_core_social_link_get_icon' ) ? block_core_social_link_get_icon( $asso_service ) : '';
+	$asso_url   = isset( $asso_adresses_reseaux[ $asso_service ] ) ? $asso_adresses_reseaux[ $asso_service ] : '';
+	if ( $asso_url ) {
+		$asso_icones_reseaux .= sprintf(
+			'<li><a href="%1$s">%2$s<span class="screen-reader-text">%3$s</span></a></li>',
+			esc_url( $asso_url ),
+			$asso_icone,
+			esc_html( $asso_libelle )
+		);
+	} else {
+		$asso_icones_reseaux .= sprintf(
+			'<li><span class="est-en-attente">%1$s<span class="screen-reader-text">%2$s</span></span></li>',
+			$asso_icone,
+			/* translators: %s: nom du réseau (ex. « Page Facebook de La Famille Wê »). */
+			esc_html( sprintf( __( '%s : bientôt disponible', 'asso-theme' ), $asso_libelle ) )
+		);
+	}
+}
 
 // Les sorties JSON ci-dessous sont des attributs de blocs produits par wp_json_encode().
 // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -93,16 +114,10 @@ $asso_libelles_reseaux = array(
 <!-- wp:paragraph -->
 <p><a href="<?php echo esc_url( 'mailto:' . antispambot( $asso_courriel ) ); ?>"><?php echo esc_html( antispambot( $asso_courriel ) ); ?></a></p>
 <!-- /wp:paragraph -->
-<?php if ( $asso_reseaux ) : ?>
 
-<!-- wp:social-links {"iconColor":"blanc","iconColorValue":"#FFFFFF","size":"has-large-icon-size","className":"is-style-logos-only asso-reseaux","style":{"spacing":{"blockGap":{"left":"0.5rem"}}}} -->
-<ul class="wp-block-social-links has-large-icon-size has-icon-color is-style-logos-only asso-reseaux">
-<?php foreach ( $asso_reseaux as $asso_service => $asso_url ) : ?>
-<!-- wp:social-link <?php echo wp_json_encode( array( 'url' => $asso_url, 'service' => $asso_service, 'label' => $asso_libelles_reseaux[ $asso_service ] ) ); ?> /-->
-<?php endforeach; ?>
-</ul>
-<!-- /wp:social-links -->
-<?php endif; ?></div>
+<!-- wp:html -->
+<ul class="asso-reseaux" aria-label="<?php echo esc_attr__( 'Réseaux sociaux', 'asso-theme' ); ?>"><?php echo $asso_icones_reseaux; ?></ul>
+<!-- /wp:html --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

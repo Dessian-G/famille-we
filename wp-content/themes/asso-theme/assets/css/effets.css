@@ -819,11 +819,38 @@
 	padding-block: 0.15em;
 }
 
-/* Icônes des réseaux sociaux du pied de page : zone tactile de 44 px (icône de 36 px). */
-.asso-pied .wp-block-social-links.asso-reseaux .wp-social-link a {
-	padding: 4px;
+/* Icônes des réseaux sociaux du pied de page : 32 px dans une zone tactile de 44 px. */
+.asso-reseaux {
+	display: flex;
+	gap: 0.5rem;
+	margin: 0.75rem 0 0 -6px;
+	padding: 0;
+	list-style: none;
 }
 
-.asso-pied .wp-block-social-links.asso-reseaux {
-	gap: 0.25rem;
+.asso-reseaux a,
+.asso-reseaux .est-en-attente {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	color: var(--wp--preset--color--blanc);
+}
+
+.asso-reseaux svg {
+	width: 32px;
+	height: 32px;
+	fill: currentColor;
+}
+
+.asso-reseaux a:hover {
+	background-color: rgb(255 255 255 / 0.15);
+}
+
+/* Pas encore d'adresse saisie : icône pâle (contraste d'environ 3:1 sur le vert), non cliquable. */
+.asso-reseaux .est-en-attente {
+	opacity: 0.6;
+	cursor: default;
 }
