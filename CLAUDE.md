@@ -107,7 +107,7 @@ Google Fonts, **hébergées dans le thème** en woff2 (`assets/fonts/`), déclar
 
 ### Menu principal
 
-Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésion · Contact · **[Faire un don]** (bouton orange)
+Accueil · L'association ▾ · Activités · Galerie · Actualités · Adhésion · Contact · Espace membres · **[Faire un don]** (bouton orange)
 
 - Sous-menu « L'association » : Qui sommes-nous · Le bureau · Nos sections · Partenaires
 - Mobile : menu hamburger (bloc Navigation natif) ; le bouton « Faire un don » reste visible dans l'en-tête.
@@ -134,6 +134,8 @@ Ligne du bas : « © année La Famille Wê. Tous droits réservés. » · Mentio
 | Contact | `/contact/` | Formulaire, e-mail, contacts par section (Facebook quand la page existera) |
 | FAQ | `/faq/` | Adhésion, cotisation, activités (blocs Détails natifs) |
 | Merci | `/merci/` | Confirmation après l'envoi d'un formulaire (adhésion, contact) ; non indexée |
+| Connexion | `/connexion/` | Formulaire de connexion des membres (voir 6, Espace membres) ; non indexée |
+| Espace membres | `/espace-membres/` (+ `mon-profil/`, `annuaire/`) | Réservé aux membres connectés : cotisation, annonces, documents, profil, annuaire |
 | Mentions légales | `/mentions-legales/` | Nom, statut, adresse postale `[À FOURNIR]`, responsable de publication, hébergeur |
 | Confidentialité | `/confidentialite/` | Données collectées, paiements Zelle (traités par les banques, hors du site), cookies, droit à l'image |
 | Page 404 | modèle `404.html` | Message chaleureux + liens vers Accueil, Activités, Contact |
@@ -172,6 +174,20 @@ Ligne du bas : « © année La Famille Wê. Tous droits réservés. » · Mentio
 - **Contenus** : `/activites/` et `/galerie/` sont les listes automatiques ; les anciennes pages provisoires du même nom sont en brouillon. Exemples marqués « À SUPPRIMER » : `scripts/creer-exemples-asso-core.php`.
 - **Photos (02/11/2026)** : 11 photos fournies par Max (dossier `Téléchargements\Mobile Devices`) importées dans la médiathèque sous les noms `famille-we-souvenir-01` à `-11` (WebP, 2000 px max, métadonnées GPS retirées) et réunies dans l'album « Nos moments en famille [À VALIDER] ». Elles restent hors de Git. Sur l'accueil, le collage utilise `famille-we-souvenir-01` (arche) et `-07` (cadre) via `asso_theme_photo()` ; la mosaïque « Souvenirs » montre les 6 dernières photos des albums publiés, chacune liée à son album (`asso_theme_souvenirs()`). Sans photo, les repères `[À FOURNIR]` réapparaissent. Non publiés : `40203.jpg` (enfant identifiable, accord des parents à obtenir), `40268.jpg` (capture du logo) et la vidéo `40213.mp4`.
 
+### Espace membres (asso-core, 07/11/2026)
+
+Demande de Max : connexion des membres, avec documents, annonces internes, annuaire, profil et cotisation. WordPress natif, sans extension tierce.
+
+- **Comptes** : créés uniquement par un administrateur (WP Admin > Comptes > Ajouter, rôle « Membre » par défaut, case « Envoyer une notification » cochée). Aucune inscription libre. E-mail de bienvenue en français (`wp_new_user_notification_email`) avec le lien pour choisir le mot de passe.
+- **Rôle et capacités** : rôle `asso_membre` (`read`, `asso_espace_membres`). Les administrateurs ont aussi `asso_gerer_membres` (annonces, documents, cotisations). Un futur rôle « Bureau » ou « Trésorier » n'aura qu'à recevoir `asso_gerer_membres`. Rôles installés par `asso_core_installer_roles()` (augmenter `ASSO_CORE_ROLES_VERSION` pour les réappliquer).
+- **Pages** (`scripts/creer-espace-membres.php`, codes courts) : `/connexion/` `[asso_connexion]`, `/espace-membres/` `[asso_espace_membres]` (cotisation, annonces, documents), `/espace-membres/mon-profil/` `[asso_profil]`, `/espace-membres/annuaire/` `[asso_annuaire]`. Lien « Espace membres » dans le menu principal.
+- **Protection** : pages de l'espace renvoyées vers `/connexion/?redirect_to=…` sans connexion, jamais en cache, `noindex`, absentes de la recherche et du plan du site. Membres tenus hors de `/wp-admin` et sans barre d'administration. Après 5 essais ratés, connexion bloquée 15 minutes (empreinte de l'IP en transient, aussi pour `wp-login.php`).
+- **Annonces** (`asso_annonce`) : non publiques ; l'API REST est réservée aux membres (`Asso_Core_REST_Reserve`).
+- **Documents** (`asso_document`, éditeur classique) : fichier rangé dans `wp-content/uploads/asso-prive/` sous un nom aléatoire, `.htaccess` « deny », téléchargé seulement par `/?asso_document=ID` une fois connecté. Sur un hébergeur nginx, ajouter une règle `deny` pour ce dossier.
+- **Profil et annuaire** : métadonnées `asso_telephone`, `asso_section`, `asso_annuaire`, `asso_annuaire_email`, `asso_annuaire_telephone`. Personne dans l'annuaire sans l'avoir coché ; changer d'e-mail ou de mot de passe demande le mot de passe actuel (10 caractères au moins).
+- **Cotisations** : liste `asso_cotisations` (période, date de réception, montant, note) saisie par le trésorier dans la fiche du compte ; colonnes « Section » et « Dernière cotisation » dans la liste des comptes. Le membre voit « 2026 : reçue le … », jamais un statut calculé.
+- **Écran WordPress « Mot de passe oublié »** aux couleurs du site (`functions.php` du thème).
+
 ---
 
 ## 7. Paiements, formulaires et données personnelles
@@ -186,7 +202,7 @@ Ligne du bas : « © année La Famille Wê. Tous droits réservés. » · Mentio
     5. Rappel : vérifier le nom du destinataire avant d'envoyer, car un paiement Zelle ne peut généralement pas être annulé.
   - Le destinataire Zelle est enregistré une seule fois dans une option `asso_zelle` (page de réglages d'asso-core), modifiable dans WP Admin sans toucher au code.
   - Jamais de numéro de compte bancaire ni de numéro de routage sur le site.
-  - Le site ne peut pas savoir si un paiement a été reçu : le trésorier vérifie les paiements à la main. Ne jamais afficher « paiement confirmé » ni de statut de cotisation automatique.
+  - Le site ne peut pas savoir si un paiement a été reçu : le trésorier vérifie les paiements à la main. Ne jamais afficher « paiement confirmé » ni de statut de cotisation automatique. Dans l'espace membres, seules les cotisations enregistrées à la main par le trésorier sont affichées (« 2026 : reçue le … »).
 - **Formulaires** (contact, adhésion) : une extension reconnue, à valider avec Max (ex. Fluent Forms ou WPForms Lite). Case de consentement, anti-spam (champ piège), aucune donnée sensible demandée. Aucune adresse IP enregistrée avec les envois (filtre dans `asso-core/includes/formulaires.php`, décision de Max du 06/11/2026) ; la page Confidentialité l'annonce.
 - Ne jamais écrire qu'un don est « déductible des impôts » ni mentionner un statut 501(c)(3) sans confirmation de Max.
 - **Secrets** : aucune clé, aucun mot de passe, aucun jeton dans le code, dans ce fichier ou dans Git. Ils vont dans les réglages de l'extension concernée ou dans `wp-config.php`, hors Git.
@@ -299,4 +315,5 @@ Réglages déjà faits : dates en français (`j F Y`, `G \h i`), commentaires fe
 - [ ] Envoi d'e-mails par SMTP (ex. WP Mail SMTP) et test réel des deux formulaires
 - [ ] Mot de passe administrateur fort, un compte par personne, sauvegardes automatiques
 - [ ] Relancer la recette sur l'adresse en ligne ; déclarer le site dans Google Search Console
+- [ ] Espace membres en ligne : tester la création d'un compte (e-mail de bienvenue reçu), « Mot de passe oublié », et vérifier que `wp-content/uploads/asso-prive/` est bien inaccessible directement (règle nginx si besoin)
 - [ ] Vérifier que l'hébergeur n'ajoute ni cookie ni statistiques non annoncés dans la page Confidentialité
