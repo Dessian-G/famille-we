@@ -406,6 +406,44 @@ function asso_core_redirection_apres_deconnexion( $adresse, $demandee ) {
 }
 add_filter( 'logout_redirect', 'asso_core_redirection_apres_deconnexion', 10, 2 );
 
+/* ---------- Mot de passe choisi par le membre (écran WordPress « Nouveau mot de passe ») ---------- */
+
+/** Longueur minimale d'un mot de passe choisi par un membre (aussi exigée dans « Mon profil »). */
+const ASSO_CORE_MDP_MIN = 10;
+
+/**
+ * Refuse un nouveau mot de passe trop court, même si la case « mot de passe faible » est forcée.
+ *
+ * @param WP_Error         $erreurs     Erreurs de validation.
+ * @param WP_User|WP_Error $utilisateur Compte concerné.
+ */
+function asso_core_valider_nouveau_mdp( $erreurs, $utilisateur ) {
+	$mdp = isset( $_POST['pass1'] ) ? trim( (string) wp_unslash( $_POST['pass1'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- clé de réinitialisation vérifiée par WordPress ; mot de passe jamais modifié.
+	if ( '' !== $mdp && mb_strlen( $mdp ) < ASSO_CORE_MDP_MIN ) {
+		/* translators: %d: nombre minimal de caractères. */
+		$erreurs->add( 'asso_mdp_court', sprintf( __( 'Choisissez un mot de passe d’au moins %d caractères.', 'asso-core' ), ASSO_CORE_MDP_MIN ) );
+	}
+}
+add_action( 'validate_password_reset', 'asso_core_valider_nouveau_mdp', 10, 2 );
+
+/**
+ * Consigne affichée au-dessus du bouton de l'écran « Nouveau mot de passe ».
+ */
+function asso_core_consigne_nouveau_mdp() {
+	/* translators: %d: nombre minimal de caractères. */
+	echo '<p class="description asso-consigne-mdp">' . esc_html( sprintf( __( 'Au moins %d caractères. Astuce : une petite phrase facile à retenir, par exemple « Mon-cafe-du-samedi-26 ».', 'asso-core' ), ASSO_CORE_MDP_MIN ) ) . '</p>';
+}
+add_action( 'resetpass_form', 'asso_core_consigne_nouveau_mdp' );
+
+/**
+ * Retire la case « Confirmer l'utilisation d'un mot de passe faible » : un mot de passe jugé
+ * faible ne peut plus être validé sur cet écran.
+ */
+function asso_core_masquer_case_mdp_faible() {
+	wp_add_inline_style( 'login', '.login .pw-weak{display:none!important}.login .asso-consigne-mdp{margin:0 0 1rem}' );
+}
+add_action( 'login_enqueue_scripts', 'asso_core_masquer_case_mdp_faible', 20 );
+
 /* ---------- E-mail de bienvenue ---------- */
 
 /**

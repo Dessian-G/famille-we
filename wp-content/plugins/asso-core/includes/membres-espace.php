@@ -194,7 +194,7 @@ function asso_core_traiter_profil() {
 	if ( ( $change_email || '' !== $nouveau ) && ! wp_check_password( $actuel, $utilisateur->user_pass, $utilisateur->ID ) ) {
 		$fin( 'mdp_actuel' );
 	}
-	if ( '' !== $nouveau && ( strlen( $nouveau ) < 10 || $nouveau !== $confirme ) ) {
+	if ( '' !== $nouveau && ( mb_strlen( $nouveau ) < ASSO_CORE_MDP_MIN || $nouveau !== $confirme ) ) {
 		$fin( 'mdp_nouveau' );
 	}
 
@@ -243,7 +243,7 @@ function asso_core_page_profil() {
 		'email'       => array( 'erreur', __( 'L’adresse e-mail n’est pas valide.', 'asso-core' ) ),
 		'email_pris'  => array( 'erreur', __( 'Cette adresse e-mail est déjà utilisée par un autre compte.', 'asso-core' ) ),
 		'mdp_actuel'  => array( 'erreur', __( 'Pour changer votre e-mail ou votre mot de passe, saisissez votre mot de passe actuel (exact).', 'asso-core' ) ),
-		'mdp_nouveau' => array( 'erreur', __( 'Le nouveau mot de passe doit faire au moins 10 caractères et être saisi deux fois à l’identique.', 'asso-core' ) ),
+		'mdp_nouveau' => array( 'erreur', /* translators: %d: nombre minimal de caractères. */ sprintf( __( 'Le nouveau mot de passe doit faire au moins %d caractères et être saisi deux fois à l’identique.', 'asso-core' ), ASSO_CORE_MDP_MIN ) ),
 		'expire'      => array( 'erreur', __( 'La page a expiré. Merci de réessayer.', 'asso-core' ) ),
 		'refus'       => array( 'erreur', __( 'Action non autorisée.', 'asso-core' ) ),
 		'erreur'      => array( 'erreur', __( 'Une erreur est survenue. Merci de réessayer.', 'asso-core' ) ),
@@ -295,8 +295,8 @@ function asso_core_page_profil() {
 	$html .= '<fieldset><legend>' . esc_html__( 'Changer mon mot de passe', 'asso-core' ) . '</legend>';
 	$html .= '<p class="asso-aide">' . esc_html__( 'Laissez ces champs vides pour garder votre mot de passe. Le mot de passe actuel est aussi demandé pour changer d’adresse e-mail.', 'asso-core' ) . '</p>';
 	$html .= $champ( 'asso-mdp-actuel', 'mdp_actuel', __( 'Mot de passe actuel', 'asso-core' ), '', 'password', ' autocomplete="current-password"' );
-	$html .= $champ( 'asso-mdp-nouveau', 'mdp_nouveau', __( 'Nouveau mot de passe (10 caractères au moins)', 'asso-core' ), '', 'password', ' autocomplete="new-password" minlength="10"' );
-	$html .= $champ( 'asso-mdp-confirme', 'mdp_confirme', __( 'Nouveau mot de passe, une seconde fois', 'asso-core' ), '', 'password', ' autocomplete="new-password" minlength="10"' );
+	$html .= $champ( 'asso-mdp-nouveau', 'mdp_nouveau', /* translators: %d: nombre minimal de caractères. */ sprintf( __( 'Nouveau mot de passe (%d caractères au moins)', 'asso-core' ), ASSO_CORE_MDP_MIN ), '', 'password', ' autocomplete="new-password" minlength="' . ASSO_CORE_MDP_MIN . '"' );
+	$html .= $champ( 'asso-mdp-confirme', 'mdp_confirme', __( 'Nouveau mot de passe, une seconde fois', 'asso-core' ), '', 'password', ' autocomplete="new-password" minlength="' . ASSO_CORE_MDP_MIN . '"' );
 	$html .= '</fieldset>';
 
 	$html .= wp_nonce_field( 'asso_profil', 'asso_profil_nonce', false, false );
